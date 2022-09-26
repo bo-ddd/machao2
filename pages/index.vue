@@ -2,7 +2,7 @@
   <div class="home">
     <div class="container">
       <!-- 头部宽屏-->
-      <header class="fs-14 header-max">
+      <header class="fs-14 header-max mt-10">
         <div class="header-l">
           <a href="/">
             <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
@@ -98,18 +98,20 @@
           <div class="cm-num-desc">累计金额</div>
         </div>
         <div class="cm-num-box">
-          <div class="cm-countup">548,310,503</div>
-          <div class="cm-num-desc">累计金额</div>
+          <div class="cm-countup">19,480</div>
+          <div class="cm-num-desc">项目数量</div>
         </div>
         <div class="cm-num-box">
-          <div class="cm-countup">548,310,503</div>
-          <div class="cm-num-desc">累计金额</div>
+          <div class="cm-countup">317,620</div>
+          <div class="cm-num-desc">注册开发者</div>
         </div>
       </div>
     </div>
 
     <!-- 功能选项 -->
-    <div class=""></div>
+    <div class="development-option-wrap wrap">
+      <p class="development-option-tit">我要找专业的软件开发成员</p>
+    </div>
   </div>
 </template>
 
@@ -159,6 +161,7 @@ header {
 
 .container {
   background: #2b3a42;
+  display: flow-root;
 }
 
 .header-l {
@@ -289,7 +292,7 @@ header {
 
 .cm-num-box{
   text-align: center;
-  padding: 40px 0;
+  padding: 50px 0;
 }
 
 .cm-num-box .cm-countup{
@@ -300,5 +303,15 @@ header {
 
 .cm-nums-out{
   background: #F7F8F9;
+}
+
+.development-option-wrap{
+  padding: 100px 0 116px;
+}
+
+.development-option-wrap .development-option-tit{
+  text-align: center;
+  font-size: 32px;
+  color: #2E3034;
 }
 </style>
