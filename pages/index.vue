@@ -40,7 +40,7 @@
         <a href="/">
           <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
         </a>
-        <img src="~/assets/imgs/icon-list.png">
+        <img src="~/assets/image/icon-list.png">
       </header>
 
       <!-- banner -->
