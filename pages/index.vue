@@ -110,7 +110,7 @@
 
     <!-- 功能选项 -->
     <div class="development-option-wrap wrap">
-      <p class="development-option-tit">我要找专业的软件开发成员</p>
+      <p class="development-option-tit mb-20">我要找专业的软件开发成员</p>
     </div>
   </div>
 </template>
