@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'machao',
@@ -14,11 +14,20 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0' // default: localhost,
+  },
+
+  serverMiddleware:[
+    '~/server/index.js'
+  ],
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['element-ui/lib/theme-chalk/index.css','@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/element-ui'],
+  plugins: ['@/plugins/element-ui', '@/plugins/axios'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
