@@ -1,0 +1,183 @@
+body,
+div,
+span,
+header,
+footer,
+nav,
+section,
+aside,
+article,
+ul,
+dl,
+dt,
+dd,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+b,
+textarea,
+button,
+input,
+select,
+figure,
+figcaption {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+textarea {
+    -webkit-appearance: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.w-250 {
+    width: 250px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mr-15 {
+    margin-right: 15px;
+}
+
+.ml-5 {
+    margin-left: 5px;
+}
+
+.ml-15{
+    margin-left:15px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.ml-50 {
+    margin-left: 50px;
+}
+
+.mb-10{
+    margin-bottom:10px;
+}
+
+.mb-20{
+    margin-bottom:20px;
+}
+
+.shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+
+.c-bababa {
+    color: #bababa;
+}
+
+.c-909090 {
+    color: #909090;
+}
+
+.c-ff4400 {
+    color: #ff4400;
+}
+
+.over-hidden {
+    overflow: hidden;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-24{
+    font-size: 24px;
+}
+
+.wrap{
+    width: 1180px;
+    margin: 0 auto;
+}
