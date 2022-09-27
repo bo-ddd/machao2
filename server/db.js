@@ -5,16 +5,14 @@ let connection = mysql.createConnection({
     port: '26451',
     user: 'root',
     password: 'genglei-1',
-    database: 'exam'
+    database: 'machao_official'
 })
 
-console.log('-----------connection------------- db.js')
 connection.connect(function (err) {
     if (err) {
         console.error('error connecting: ' + err.stack);
         return;
     }
-
     console.log('connected as id ' + connection.threadId);
 });
 
