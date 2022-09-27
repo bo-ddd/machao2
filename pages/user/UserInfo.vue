@@ -1,14 +1,15 @@
 <template>
   <div>
     <h1>userinfo</h1>
-    <div>{{ username }}</div>
   </div>
 </template>
 
 <script>
 export default {
   async asyncData({ $axios }) {
-    return await $axios.post('/api/user/info')
+    const res =  await $axios.post('/api/user/list')
+    console.log(res);
+    return res;
   },
 }
 </script>
