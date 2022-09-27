@@ -1,21 +1,12 @@
-const app = require('express')()
-const connection = require('./db')
+const express = require('express')
+const mount = require('./middleware/mount')
+const app = express()
+app.use(express.json())
+app.use(mount)
 
-app.post('/user/info', (req, res)=>{
-    res.json({
-        username: 'xiaoming'
-    })
-})
+const userRouter = require('./user')
 
-app.post('/user/list', async (req, res)=>{
-    console.log('/user/list is ok--------------')
-    connection.query('select * from user_info', function(err, data){
-        res.json({
-            status: 1,
-            data
-        })
-    })
-})
+app.use('/user', userRouter);
 
 module.exports = {
     path: '/api',
