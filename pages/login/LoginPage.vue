@@ -13,32 +13,37 @@
         </div>
 
         <div class="container">
-            <!-- <div class="con-tab1" style="display:block">
+            <div v-show="flag" class="con-tab1">
                 <div class="con-title mr-t-40 mr-b-14">微信扫码登录</div>
-                <img src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQH_7zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyREJyTUJPVEtleTMxNnZyTnh6MVcAAgSPTTFjAwQQDgAA" alt="">
+                <img src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQH_7zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyREJyTUJPVEtleTMxNnZyTnh6MVcAAgSPTTFjAwQQDgAA"
+                    alt="">
                 <div class="mr-t-35">
-                    <span class="link-style">使用账号密码登录</span>
-
+                    <span class="link-style" @click="openFlag">使用账号密码登录</span>
                 </div>
-            </div> -->
-            <div class="con-tab2 tab-wrap">
+            </div>
+            <div v-show="!flag" class="con-tab2 tab-wrap">
                 <div class="con-title mr-t-40 mr-b-14">账号密码登录</div>
-                <input type="text" placeholder="手机号 / 用户名 / 电子邮箱" class="con-input mr-t-14">
-                <input type="text" placeholder="请输入密码" class="con-input mr-t-14 mr-b-8">
-                <div class="flex-bet fs-14 con">
-                    <div class=flex-align-center >
+                <input v-model="userAccount" @blur="checkForm" type="text" placeholder="手机号 / 用户名 / 电子邮箱"
+                    class="con-input mr-t-14 mr-b-7">
+                <div v-show="accountFlag" class="tip-error"><img src="@/assets/image/icon-error.png" alt=""> 请输入账号</div>
+                <input v-model="passWord" type="text" placeholder="请输入密码" class="con-input mr-t-14 mr-b-8">
+                <div v-show="passwordFlag" class="tip-error mr-b-4"><img src="@/assets/image/icon-error.png"
+                        alt="">请输入密码</div>
+                <div class="flex-bet fs-14">
+                    <div class="    cur-point flex-align-center">
                         <input type="checkbox">
                         <span class="pa-lr-8">
                             记住我
                         </span>
                     </div>
-                    <div>
+                    <div class="cur-point">
                         找回密码
                     </div>
                 </div>
-                <button class="con-btn">登录</button>
-                <div>
-                    <img src="@/assets/image/icon-wechat.png" alt="">
+                <button class="con-btn mt-15">登录</button>
+                <div class="wechat-tip mt-35">
+                    <img class="mr-6" src="@/assets/image/icon-wechat.png" alt="">
+                    <span @click="openFlag">使用微信扫码登录</span>
                 </div>
             </div>
         </div>
@@ -53,10 +58,45 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            flag: true,
+            userAccount: '',
+            passWord: '',
+            accountFlag: false,
+            passwordFlag: false,
+            a:'green'
+        }
+    },
+    asyncData() {
+        return {
+
+        }
+    },
+    methods: {
+        openFlag() {
+            this.flag = !this.flag
+        },
+        checkForm() {
+            console.log(this.userAccount);
+            if (!this.userAccount) {
+                console.log('没输入');
+                this.accountFlag = true;
+            }
+        }
+    }
+}
+</script>
 <style scoped>
 .login-page {
     position: relative;
     height: 100vh;
+}
+
+.logo-img {
+    display: block;
 }
 
 .head-nav {
@@ -90,6 +130,11 @@
     background-color: white;
     padding: 6.2px 21px;
     border-radius: 5px;
+}
+
+.nav-right .btn:hover {
+    color: white;
+    background-color: #4289dc;
 }
 
 .flex-align-center {
@@ -131,13 +176,12 @@
 }
 
 .container {
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    justify-content: center;
 }
 
 .container .con-tab1 {
     display: inline-block;
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -161,14 +205,17 @@
     font-size: 21px;
     padding: 14px 0;
     text-align: center;
+    color: black;
 }
 
 .mr-b-14 {
     margin-bottom: 14px;
 }
-.mr-b-8{
+
+.mr-b-8 {
     margin-bottom: 8px;
 }
+
 .mr-t-35 {
     margin-top: 35px;
 }
@@ -181,19 +228,24 @@
     display: block;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid #cad3de;
+    border: 1px solid v-bind(a);
     border-radius: 4px;
     font-size: 14px;
     padding: 10px 14px;
 }
 
+.con-tab2 {
+    color: #727F8F;
+}
+
 .con-tab2 input::placeholder {
     color: #cad3de;
 }
-.con-input:focus{
-    border: 1px solid #4289DC;
 
+.con-input:focus {
+    border: 1px solid #4289DC;
 }
+
 .tab-wrap {
     width: 322px;
     margin: auto;
@@ -204,14 +256,70 @@
     align-items: center;
     justify-content: space-between;
 }
-.pa-lr-8{
+
+.pa-lr-8 {
     padding: 0 8px;
 }
-.con-btn{
+
+.con-btn {
     width: 100%;
     background-color: #4289DC;
-    color: white;border-radius: 4px;
+    color: white;
+    border-radius: 4px;
     padding: 9px 14px;
     font-size: 14px;
+}
+
+.wechat-tip {
+    text-align: center;
+    color: #9B9B9B;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.wechat-tip img {
+    width: 16px;
+    height: 16px;
+}
+
+.mt-35 {
+    margin-top: 35px;
+}
+
+.mr-6 {
+    margin-right: 6px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.cur-point {
+    cursor: pointer;
+}
+
+.tip-error {
+    color: #db5858;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.tip-error img {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.mr-b-7 {
+    margin-bottom: 7px;
+}
+
+.mr-b-4 {
+    margin-bottom: 4px;
 }
 </style>
