@@ -23,14 +23,10 @@
             </div>
             <div v-show="!flag" class="con-tab2 tab-wrap">
                 <div class="con-title mr-t-40 mr-b-14">账号密码登录</div>
-                <input v-model="userAccount" @blur="checkForm" type="text" placeholder="手机号 / 用户名 / 电子邮箱"
-                    class="con-input mr-t-14 mr-b-7">
-                <div v-show="accountFlag" class="tip-error"><img src="@/assets/image/icon-error.png" alt=""> 请输入账号</div>
-                <input v-model="passWord" type="text" placeholder="请输入密码" class="con-input mr-t-14 mr-b-8">
-                <div v-show="passwordFlag" class="tip-error mr-b-4"><img src="@/assets/image/icon-error.png"
-                        alt="">请输入密码</div>
+                <TipInput v-model="userAccount" :tipFlag="accountFlag" placeholder="手机号 / 用户名 / 电子邮箱" tipText="请输入账号" :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
+                <TipInput v-model="passWord" :tipFlag="passwordFlag" placeholder="请输入密码" tipText="请输入密码" :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
                 <div class="flex-bet fs-14">
-                    <div class="    cur-point flex-align-center">
+                    <div class="cur-point flex-align-center">
                         <input type="checkbox">
                         <span class="pa-lr-8">
                             记住我
@@ -59,34 +55,34 @@
     </div>
 </template>
 <script>
+import TipInput from '~/components/TipInput.vue';
 export default {
     data() {
         return {
             flag: true,
-            userAccount: '',
-            passWord: '',
+            userAccount: "",
+            passWord: "",
             accountFlag: false,
             passwordFlag: false,
-            a:'green'
-        }
+            a: "green"
+        };
     },
     asyncData() {
-        return {
-
-        }
+        return {};
     },
     methods: {
         openFlag() {
-            this.flag = !this.flag
+            this.flag = !this.flag;
         },
         checkForm() {
             console.log(this.userAccount);
             if (!this.userAccount) {
-                console.log('没输入');
+                console.log("没输入");
                 this.accountFlag = true;
             }
         }
-    }
+    },
+    components: { TipInput }
 }
 </script>
 <style scoped>
@@ -224,27 +220,9 @@ export default {
     margin-top: 14px;
 }
 
-.con-input {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid v-bind(a);
-    border-radius: 4px;
-    font-size: 14px;
-    padding: 10px 14px;
-}
 
-.con-tab2 {
-    color: #727F8F;
-}
 
-.con-tab2 input::placeholder {
-    color: #cad3de;
-}
 
-.con-input:focus {
-    border: 1px solid #4289DC;
-}
 
 .tab-wrap {
     width: 322px;
@@ -268,8 +246,12 @@ export default {
     border-radius: 4px;
     padding: 9px 14px;
     font-size: 14px;
+    cursor: pointer;
 }
+.con-btn:hover{
+background-color: #08c;
 
+}
 .wechat-tip {
     text-align: center;
     color: #9B9B9B;
@@ -301,19 +283,7 @@ export default {
     cursor: pointer;
 }
 
-.tip-error {
-    color: #db5858;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-}
 
-.tip-error img {
-    width: 14px;
-    height: 14px;
-    display: inline-block;
-    margin-right: 5px;
-}
 
 .mr-b-7 {
     margin-bottom: 7px;
@@ -321,5 +291,8 @@ export default {
 
 .mr-b-4 {
     margin-bottom: 4px;
+}
+.con-tab2 {
+    color: #727F8F;
 }
 </style>
