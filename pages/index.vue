@@ -297,6 +297,16 @@
         </div>
       </div>
     </div>
+
+    <!-- 加入我们 -->
+    <div class="join-us-wrap">
+      <div class="join-us wrap">
+        <p class="title text-center fs-46 cl-fff">来码市，找人才/任务快人一步</p>
+        <div class="btn-wrap mt-50">
+          <div class="large-btn them-low fs-18">加入码市</div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </template>
@@ -644,6 +654,11 @@ header {
   color: #fff;
 }
 
+.them-low{
+  background: #fff;
+  color: #3388e9;
+}
+
 .why-check{
   padding: 128px 0;
 }
@@ -814,5 +829,22 @@ header {
 
 .free-way .free-way-left{
   padding: 60px 0;
+}
+
+.join-us-wrap{
+  background: url("~/assets/image/bg.png");
+}
+
+.join-us-wrap .join-us{
+  padding: 100px 0;
+}
+
+.fs-46{
+  font-size: 46px;
+}
+
+.join-us .btn-wrap{
+  display: flex;
+  justify-content: center;
 }
 </style>
