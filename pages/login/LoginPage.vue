@@ -47,7 +47,7 @@
             </div>
         </div>
         <FootInfo></FootInfo>
-       
+
     </div>
 </template>
 <script>
@@ -147,5 +147,4 @@ export default {
         width: 100%;
     }
 }
-
 </style> 
