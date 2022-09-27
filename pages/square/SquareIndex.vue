@@ -44,7 +44,7 @@
                         :views="item.views" :type-info="item.typeInfo">
                     </template-box>
                 </section>
-                <el-pagination class="pagination" background="#fff" layout="prev, pager, next" :current-page="1"
+                <el-pagination class="pagination" background layout="prev, pager, next" :current-page="1"
                     :page-size="pageSize" :total="list.length">
                 </el-pagination>
             </div>
@@ -68,119 +68,119 @@ export default {
             list: [
                 {
                     id: 1,
-                    url: require('@/assets/images/template_1.png'),
+                    url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
                     typrInfo: '小程序'
                 },
                 {
                     id: 2,
-                    url: require('@/assets/images/template_2.png'),
+                    url: require('@/assets/image/template_2.png'),
                     title: '电影演出票务原型',
                     views: '617',
                     typrInfo: 'APP'
                 },
                 {
                     id: 3,
-                    url: require('@/assets/images/template_3.png'),
+                    url: require('@/assets/image/template_3.png'),
                     title: '租房原型',
                     views: '443',
                     typrInfo: 'APP'
                 },
                 {
                     id: 4,
-                    url: require('@/assets/images/template_4.png'),
+                    url: require('@/assets/image/template_4.png'),
                     title: '二手车交易原型',
                     views: '341',
                     typrInfo: 'APP'
                 },
                 {
                     id: 5,
-                    url: require('@/assets/images/template_4.png'),
+                    url: require('@/assets/image/template_4.png'),
                     title: '二手车交易原型',
                     views: '341',
                     typrInfo: 'APP'
                 },
                 {
                     id: 6,
-                    url: require('@/assets/images/template_3.png'),
+                    url: require('@/assets/image/template_3.png'),
                     title: '租房原型',
                     views: '443',
                     typrInfo: 'APP'
                 },
                 {
                     id: 7,
-                    url: require('@/assets/images/template_2.png'),
+                    url: require('@/assets/image/template_2.png'),
                     title: '电影演出票务原型',
                     views: '617',
                     typrInfo: 'APP'
                 },
                 {
                     id: 8,
-                    url: require('@/assets/images/template_1.png'),
+                    url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
                     typrInfo: '小程序'
                 },
                 {
                     id: 9,
-                    url: require('@/assets/images/template_1.png'),
+                    url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
                     typrInfo: '小程序'
                 },
                 {
                     id: 10,
-                    url: require('@/assets/images/template_2.png'),
+                    url: require('@/assets/image/template_2.png'),
                     title: '电影演出票务原型',
                     views: '617',
                     typrInfo: 'APP'
                 },
                 {
                     id: 11,
-                    url: require('@/assets/images/template_3.png'),
+                    url: require('@/assets/image/template_3.png'),
                     title: '租房原型',
                     views: '443',
                     typrInfo: 'APP'
                 },
                 {
                     id: 12,
-                    url: require('@/assets/images/template_4.png'),
+                    url: require('@/assets/image/template_4.png'),
                     title: '二手车交易原型',
                     views: '341',
                     typrInfo: 'APP'
                 },
                 {
                     id: 13,
-                    url: require('@/assets/images/template_4.png'),
+                    url: require('@/assets/image/template_4.png'),
                     title: '二手车交易原型',
                     views: '341',
                     typrInfo: 'APP'
                 },
                 {
                     id: 14,
-                    url: require('@/assets/images/template_3.png'),
+                    url: require('@/assets/image/template_3.png'),
                     title: '租房原型',
                     views: '443',
                     typrInfo: 'APP'
                 },
                 {
                     id: 15,
-                    url: require('@/assets/images/template_2.png'),
+                    url: require('@/assets/image/template_2.png'),
                     title: '电影演出票务原型',
                     views: '617',
                     typrInfo: 'APP'
                 },
                 {
                     id: 16,
-                    url: require('@/assets/images/template_1.png'),
+                    url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
                     typrInfo: '小程序'
                 },
                 {
                     id: 17,
-                    url: require('@/assets/images/template_1.png'),
+                    url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
                     typrInfo: '小程序'
@@ -209,7 +209,7 @@ export default {
 .header {
     width: 100%;
     height: 320px;
-    background: url("../../assets/images/banner.png");
+    background: url("../../assets/image/banner.png");
     background-size: 100%;
 }
 
