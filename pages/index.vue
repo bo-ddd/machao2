@@ -4,9 +4,9 @@
       <!-- 头部宽屏-->
       <header class="fs-14 header-max mt-10">
         <div class="header-l">
-          <a href="/">
+          <nuxt-link to="/">
             <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
-          </a>
+          </nuxt-link>
           <div class="nav-list">
             <div class="nav-item">
               <a>找项目</a>
@@ -37,9 +37,9 @@
       </header>
       <!-- 头部窄屏 -->
       <header class="header-min">
-        <a href="/">
-          <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
-        </a>
+        <nuxt-link to="/">
+            <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
+        </nuxt-link>
         <img src="~/assets/image/icon-list.png">
       </header>
 
@@ -110,7 +110,50 @@
 
     <!-- 功能选项 -->
     <div class="development-option-wrap wrap">
+
+      <!-- 标题 -->
       <p class="development-option-tit mb-20">我要找专业的软件开发成员</p>
+      
+      <!-- 列表 -->
+      <div class="development-option-list">
+        <div class="development-option-item">
+          <img src="~/assets/image/icon-dev.png" class="icon">
+          <p class="name">开发工程师</p>
+          <p class="desc">系统更稳定,数据更安全</p>
+        </div>
+        <div class="development-option-item">
+          <img src="~/assets/image/icon-team.png" class="icon">
+          <p class="name">开发团队</p>
+          <p class="desc">实施更系统,协作效率更高</p>
+        </div>
+        <div class="development-option-item">
+          <img src="~/assets/image/icon-cp.png" class="icon">
+          <p class="name">产品经理</p>
+          <p class="desc">需求梳理更彻底,产品更合理</p>
+        </div>
+        <div class="development-option-item">
+          <img src="~/assets/image/icon-test.png" class="icon">
+          <p class="name">测试工程师</p>
+          <p class="desc">bug数量更少,产品质量更高</p>
+        </div>
+        <div class="development-option-item">
+          <img src="~/assets/image/icon-ui.png" class="icon">
+          <p class="name">UI设计师</p>
+          <p class="desc">页面更美观,视觉体验更优秀</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- 服务信息 -->
+    <div class="cm-info-out">
+        <div class="cm-info-wrap wrap">
+          <div class="cm-info-left">
+            <p class="title">我要找全面的软件开发服务</p>
+          </div>
+          <div class="cm-info-right">
+            <img class="" src="https://assets.codemart.com/images/index/service.png">
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -313,5 +356,51 @@ header {
   text-align: center;
   font-size: 32px;
   color: #2E3034;
+}
+
+.development-option-wrap .development-option-list{
+  display: flex;
+}
+
+.development-option-wrap .development-option-list .development-option-item{
+  width: 20%;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.development-option-item .name{
+  margin: 16px 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.development-option-item .desc{
+  font-size: 14px;
+  color: #ccc;
+}
+
+.development-option-item:hover{
+  box-shadow: 0 4px 8px #0000001f, 0 0 12px #0000000a;
+  cursor: pointer;
+}
+
+.icon{
+  width: 64px;
+}
+
+.cm-info-out{
+  background: #F7FBFF;
+}
+
+.cm-info-wrap{
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.title{
+  font-size: 32px;
+  font-weight: 600;
 }
 </style>
