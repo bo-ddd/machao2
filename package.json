@@ -15,13 +15,9 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.19.3",
-<<<<<<< HEAD
     "element-ui": "^2.15.10",
-=======
-    "element-ui": "^2.15.6",
     "express": "^4.18.1",
     "mysql": "^2.18.1",
->>>>>>> 93e11ae2daa3ab476a3bc89bc4848d74190c2e37
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
