@@ -36,6 +36,10 @@
                         找回密码
                     </div>
                 </div>
+                <button class="con-btn">登录</button>
+                <div>
+                    <img src="@/assets/image/icon-wechat.png" alt="">
+                </div>
             </div>
         </div>
 
@@ -202,5 +206,12 @@
 }
 .pa-lr-8{
     padding: 0 8px;
+}
+.con-btn{
+    width: 100%;
+    background-color: #4289DC;
+    color: white;border-radius: 4px;
+    padding: 9px 14px;
+    font-size: 14px;
 }
 </style>
