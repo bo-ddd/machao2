@@ -47,7 +47,7 @@ input[type="reset"] {
     -webkit-appearance: none;
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
@@ -67,7 +67,7 @@ body {
     height: 0;
 }
 
-.inline-block{
+.inline-block {
     display: inline-block;
 }
 
@@ -93,12 +93,16 @@ body {
     margin-right: 15px;
 }
 
+.mr-44 {
+    margin-right: 44px;
+}
+
 .ml-5 {
     margin-left: 5px;
 }
 
-.ml-15{
-    margin-left:15px;
+.ml-15 {
+    margin-left: 15px;
 }
 
 .ml-20 {
@@ -117,6 +121,10 @@ body {
     margin-top: 15px;
 }
 
+.mt-18 {
+    margin-top: 18px;
+}
+
 .mt-20 {
     margin-top: 20px;
 }
@@ -125,16 +133,24 @@ body {
     margin-top: 30px;
 }
 
+.mt-40 {
+    margin-top: 40px;
+}
+
 .ml-50 {
     margin-left: 50px;
 }
 
-.mb-10{
-    margin-bottom:10px;
+.mb-10 {
+    margin-bottom: 10px;
 }
 
-.mb-20{
-    margin-bottom:20px;
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
 }
 
 .shadow {
@@ -153,6 +169,14 @@ body {
     color: #ff4400;
 }
 
+.c-ffffff {
+    color: #ffffff;
+}
+
+.c-8d9ea7 {
+    color: #8d9ea7;
+}
+
 .over-hidden {
     overflow: hidden;
 }
@@ -165,6 +189,10 @@ body {
     font-size: 16px;
 }
 
+.fs-12 {
+    font-size: 12px;
+}
+
 .fs-14 {
     font-size: 14px;
 }
@@ -173,11 +201,15 @@ body {
     font-size: 18px;
 }
 
-.fs-24{
+.fs-24 {
     font-size: 24px;
 }
 
-.wrap{
+.wrap {
     width: 1180px;
     margin: 0 auto;
+}
+
+.borderr-0 {
+    border-radius: 0;
 }

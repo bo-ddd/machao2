@@ -11,11 +11,15 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    { rel: "stylesheet", href: "https://at.alicdn.com/t/c/font_3673704_5a4r366dtzn.css?spm=a313x.7781069.1998910419.75&file=font_3673704_5a4r366dtzn.css" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    '@assets/css/main.css'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['@/plugins/element-ui'],
