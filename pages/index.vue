@@ -13,9 +13,7 @@
             </div>
             <div class="nav-item">
               <a> 原型广场</a>
-              <svg class="new-tip" xmlns="http://www.w3.org/2000/svg" width="36" height="14" viewBox="0 0 36 14">
-                <g fill="none">
-                  <rect width="36" height="14" fill="#F75288" rx="2"></rect>
+              <svg class="new-tip" xmlns="http://www.w3.org/2000/svg" width="36" height="14" viewBox="0 0 36 14"><g fill="none"><rect width="36" height="14" fill="#F75288" rx="2"></rect>
                   <path fill="#FFFFFF"
                     d="M5.77,3.146 L5.77,11 L6.969,11 L6.969,5.093 L7.013,5.093 L11.072,11 L12.238,11 L12.238,3.146 L11.039,3.146 L11.039,8.987 L10.995,8.987 L6.98,3.146 L5.77,3.146 Z M13.789,3.146 L13.789,11 L19.619,11 L19.619,9.977 L14.988,9.977 L14.988,7.48 L19.168,7.48 L19.168,6.457 L14.988,6.457 L14.988,4.169 L19.432,4.169 L19.432,3.146 L13.789,3.146 Z M20.125,3.146 L22.38,11 L23.667,11 L25.262,4.939 L25.306,4.939 L26.901,11 L28.177,11 L30.443,3.146 L29.09,3.146 L27.561,9.262 L27.517,9.262 L25.911,3.146 L24.657,3.146 L23.051,9.262 L23.007,9.262 L21.478,3.146 L20.125,3.146 Z">
                   </path>
@@ -149,20 +147,220 @@
         <div class="cm-info-wrap wrap">
           <div class="cm-info-left">
             <p class="title">我要找全面的软件开发服务</p>
+            <p class="desc c-bababa fs-16">想要更棒的项目协作体验,更高的交付质量,更全面的服务保障吗?试试"英选-码市"软件定制整包服务</p>
+            <div class="detail-list mt-50">
+              <div class="detail-item">
+                <img class="icon-small" src="~/assets/image/icon-info.png">
+                <span class="ml-15">信息化系统对接</span>
+              </div>
+              <div class="detail-item">
+                <img class="icon-small"  src="~/assets/image/icon-info.png">
+                <span class="ml-15">拥有版权和数据</span>
+              </div>
+              <div class="detail-item">
+                <img class="icon-small"  src="~/assets/image/icon-info.png">
+                <span class="ml-15">满足一致视觉要求</span>
+              </div>
+              <div class="detail-item">
+                <img class="icon-small"  src="~/assets/image/icon-info.png">
+                <span class="ml-15">企业数据资产化</span>
+              </div>
+            </div>
+            <div class="large-btn them-light fs-18">了解整包服务</div>
           </div>
           <div class="cm-info-right">
-            <img class="" src="https://assets.codemart.com/images/index/service.png">
+            <img src="https://assets.codemart.com/images/index/service.png">
           </div>
         </div>
     </div>
+
+    <!-- 为什么选择 -->
+    <div class="why-check-wrap">
+      <div class="wrap why-check">
+          <p class="title text-center">我为什么选择码市</p>
+          <div class="why-check-list">
+            <div class="why-check-item">
+                <img src="~/assets/image/icon-large.png">
+                <p class="title">海量人才匹配</p>
+                <div class="line"></div>
+            </div>
+            <div class="why-check-item">
+                <img src="~/assets/image/icon-zy.png">
+                <p class="title">专注软件领域</p>
+                <div class="line"></div>
+            </div>
+            <div class="why-check-item">
+                <img src="~/assets/image/icon-official.png">
+                <p class="title">官方款项托管</p>
+                <div class="line"></div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- 开始寻找人才 -->
+    <div class="begin-wrap">
+        <div class="wrap begin">
+          <div class="begin-left">
+            <img src="~/assets/image/banner-find.png">
+          </div>
+          <div class="begin-right">
+            <p class="title">开始寻找你的外包人才</p>
+            <p class="desc c-bababa fs-16 mt-15">在码市用同样的价格找到更优的人才，用同样的时间连接更多候选人，在码市寻找项目外包人才，快人一步。</p>
+            <div class="large-btn them-light fs-18 mt-30">我要找人才</div>
+          </div>
+        </div>
+    </div>
+
+    <!-- 查找软件开发任务 find-dev-task -->
+    <div class="dev-task-wrap">
+      <div class="dev-task wrap">
+        <p class="title text-center">我要找靠谱的软件开发任务</p>
+        <p class="desc text-center fs-16 c-bababa">找任务，找更多任务，快速找更多任务</p>
+        <div class="dev-task-list mt-50">
+          <div class="dev-task-item shadow">
+            <img src="~/assets/image/app.png">
+            <p class="text-center fs-18">APP开发</p>
+          </div>
+          <div class="dev-task-item shadow">
+            <img src="~/assets/image/app.png">
+            <p class="text-center fs-18">小程序开发</p>
+          </div>
+          <div class="dev-task-item shadow">
+            <img src="~/assets/image/app.png">
+            <p class="text-center fs-18">Web网站开发</p>
+          </div>
+          <div class="dev-task-item shadow">
+            <img src="~/assets/image/app.png">
+            <p class="text-center fs-18">前端开发</p>
+          </div>
+          <div class="dev-task-item shadow">
+            <img src="~/assets/image/app.png">
+            <p class="text-center fs-18">后端开发</p>
+          </div>
+          <div class="dev-task-item shadow">
+            <img src="~/assets/image/app.png">
+            <p class="text-center fs-18">产品原型设计</p>
+          </div>
+          <div class="dev-task-item shadow">
+            <img src="~/assets/image/app.png">
+            <p class="text-center fs-18">软件测试</p>
+          </div>
+          <div class="dev-task-item shadow">
+            <img src="~/assets/image/app.png">
+            <p class="text-center fs-18">UI设计</p>
+          </div>
+        </div>
+        <div class="btn-wrap mt-30">
+          <div class="large-btn them-light fs-18">全部任务</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 任务说明 -->
+    <div class="task-des-wrap">
+      <div class="wrap task-desc">
+        <div class="task-desc-left">
+          <p class="title">我要找任务还需了解</p>
+          <img class="mt-20" src="~/assets/image/faqq.png">
+        </div>
+
+        <div class="task-desc-right">
+            <div class="task-desc-list">
+                <div class="task-desc-item" v-for="item in knowList" :key="item.id" @click="handleKnowItem(item)">
+                  <div class="question">
+                    <div class="question-left">
+                      <img class="icon-small" src="~/assets/image/faq.png">
+                      <p class="fs-20 ml-15">{{item.question}}</p>
+                    </div>
+                    <img class="arrow"  src="~/assets/image/arrow.png">
+                  </div>
+                  <div class="answer fs-16" v-show="item.bool">
+                    <p>{{item.answer}}</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 开启自由之路 -->
+    <div class="free-way-wrap">
+      <div class="free-way wrap">
+        <div class="free-way-left">
+          <p class="title cl-fff">开启你的自由职业之路</p>
+          <p class="desc cl-fff mt-20 fs-16">发挥擅长技能，弹性安排工作时间，在任何地方工作，灵活选择全职或兼职，拓宽专业技能，发展兴趣爱好......最重要的是还能赚钱，来码市，帮你实现。</p>
+          <div class="large-btn them-light fs-18 mt-30">开启自由职业之路</div>
+        </div>
+        <div class="free-way-right">
+          <img src="~/assets/image/free.png">
+        </div>
+      </div>
+    </div>
+
+    <!-- 加入我们 -->
+    <div class="join-us-wrap">
+      <div class="join-us wrap">
+        <p class="title text-center fs-46 cl-fff">来码市，找人才/任务快人一步</p>
+        <div class="btn-wrap mt-50">
+          <div class="large-btn them-low fs-18">加入码市</div>
+        </div>
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
+  const knowList = [
+    {
+      id : 1,
+      question:'如何注册及认证？',
+      answer:'注册并认证身份注册成为 “码士”，完成码市测试 能让你更了解码市交易规则，完善个人技能信息和项目经验即可开始报名接单。',
+      bool:false
+    },
+    {
+      id : 2,
+      question:'是否需要认证真实身份才能接单？',
+      answer:'为确保项目与人员的真实性，要求完成实名认证才可接单。需求方会通过报名者的真实性、项目经验等信息考量匹配度。',
+      bool:false
+    },
+    {
+      id : 3,
+      question:'开发者接单是否需要支付服务费？',
+      answer:'开发者在码市承接项目，码市平台需要向非会员的开发方收取总项目金额的 10% 的服务费，服务费会在支付阶段款项时扣除相应比例的服务费，不需再提供发票抵扣。',
+      bool:false
+    },
+    {
+      id : 4,
+      question:'如何交付项目？',
+      answer:'项目每个阶段的交付物和交付的功能以双方协商的为准，建议开发者项目验收时交付该项目必要的源代码、编译程序、说明文档等。',
+      bool:false
+    },
+    {
+      id : 5,
+      question:'是否需要给需求方提供质保期？',
+      answer:'质保期是指在项目完成开发后，开发者仍然要为本次项目中出现的 bug 进行调优和修复的一段时期，质保期周期长短可根据双方协调来确定。建议双方制定阶段划分的时候将最后一个阶段划分为质保期，以便后续bug修复调优',
+      bool:false
+    },
+    {
+      id : 6,
+      question:'怎么保障需求方准时支付项目款？',
+      answer:'在提交交付物后，可适当提醒需求方尽快确认验收，一旦需求方在码市上确认验收，款项便自动转入你的开发宝账户中。',
+      bool:false
+    },
+  ]
 export default {
   name: 'IndexPage',
-  computed: {
-
+  data(){
+    return {
+      knowList,
+    };
+  },
+  methods:{
+    handleKnowItem(item){
+      item.bool = !item.bool;
+    }
   }
 }
 </script>
@@ -388,6 +586,10 @@ header {
   width: 64px;
 }
 
+.icon-small{
+  width: 20px;
+}
+
 .cm-info-out{
   background: #F7FBFF;
 }
@@ -396,11 +598,253 @@ header {
   padding: 100px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 0 100px;
 }
 
+.cm-info-wrap .cm-info-right img{
+  width: 590px;
+}
+
+.cm-info-wrap .cm-info-right img:hover{
+  box-shadow: 0 4px 8px #0000001f, 0 0 12px #0000000a;
+}
+
+.cm-info-wrap .cm-info-right{
+  text-align: right;
+}
 
 .title{
   font-size: 32px;
   font-weight: 600;
+}
+
+.cm-info-left .desc{
+  padding: 12px 0;
+}
+
+.cm-info-left .detail-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cm-info-left .detail-list .detail-item{
+  width: 50%;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.mt-50{
+  margin-top: 50px;
+}
+
+.large-btn{
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 5px;
+}
+
+.cm-info-left .large-btn:hover{
+  cursor: pointer;
+  background: #3381db;
+}
+
+.them-light{
+  background: #3388e9;
+  color: #fff;
+}
+
+.them-low{
+  background: #fff;
+  color: #3388e9;
+}
+
+.why-check{
+  padding: 128px 0;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.why-check .title{
+  padding: 32px 0;
+}
+
+.why-check-list{
+  display: flex;
+}
+
+.why-check-list .why-check-item{
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-check-list .why-check-item img{
+  width: 140px;
+}
+
+.why-check-list .why-check-item .title{
+  padding: 16px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.line{
+  width: 24px;
+  height: 4px;
+  background: #3388e9;
+}
+
+.begin-wrap{
+  background: #F7FBFF;
+}
+
+.begin-wrap .begin{
+  display: grid;
+  padding: 100px 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 100px;
+}
+
+.begin-wrap .begin .begin-left img{
+  width: 590px;
+}
+
+.begin-wrap .begin .begin-right{
+  padding: 100px 0;
+}
+
+.begin-wrap .begin .begin-right .desc{
+  line-height: 150%;
+}
+
+.dev-task{
+  padding: 100px 0;
+}
+
+.dev-task .dev-task-list{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 30px;
+}
+
+.dev-task-item img{
+  width: 274px;
+}
+
+.dev-task-item p{
+  padding: 24px;
+}
+
+.dev-task-item:hover{
+  box-shadow: 0 4px 8px #0000001f, 0 0 12px #0000000a;
+  cursor: pointer;
+}
+
+.dev-task .btn-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.task-des-wrap{
+  background: #f7fbff;
+}
+
+.task-des-wrap .task-desc{
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0 40px;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.task-desc .task-desc-left img{
+  width: 234px;
+}
+
+.task-desc .task-desc-left{
+  padding-left: 90px;
+}
+
+.fs-32{
+  font-size: 32px;
+}
+
+.task-desc-item .question .question-left{
+  display: flex;
+  align-items: center;
+}
+
+.task-desc-item .question .question-left p{
+  font-weight: 600;
+}
+
+.task-desc-item .question{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:20px 32px;
+  border-top: 1px solid #ccc;
+  border-bottom: .5px solid #ccc;
+}
+
+.arrow{
+  width: 14px;
+}
+
+.task-desc-item .answer{
+  padding:20px 32px;
+  line-height: 150%;
+  background: #fff;
+}
+
+.task-desc-item:hover{
+  cursor: pointer;
+}
+
+.free-way-wrap{
+  background: #28384E;
+}
+
+.free-way{
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:0 100px;
+}
+
+.cl-fff{
+  color: #fff;
+}
+
+.free-way .free-way-left .desc{
+  line-height: 200%;
+}
+
+.free-way .free-way-left{
+  padding: 60px 0;
+}
+
+.join-us-wrap{
+  background: url("~/assets/image/bg.png");
+}
+
+.join-us-wrap .join-us{
+  padding: 100px 0;
+}
+
+.fs-46{
+  font-size: 46px;
+}
+
+.join-us .btn-wrap{
+  display: flex;
+  justify-content: center;
 }
 </style>
