@@ -146,7 +146,7 @@ header {
     color: #ffff;
     display: flex;
     gap: 0 10px;
-    align-items: end;
+    align-items: flex-end;
     justify-content: right;
 }
 
