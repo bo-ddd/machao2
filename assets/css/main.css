@@ -72,6 +72,20 @@ body {
 }
 
 
+.flex-ja-center{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+}
+.just-center{
+    display:flex ;
+    justify-content: center;
+}
+.just-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .align-center {
     display: flex;
     align-items: center;
@@ -85,12 +99,31 @@ body {
     width: 250px;
 }
 
-.mr-5 {
-    margin-right: 5px;
+
+
+
+.mt-10 {
+    margin-top: 10px;
 }
 
-.mr-15 {
-    margin-right: 15px;
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-35 {
+    margin-top: 35px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
 }
 
 .ml-5 {
@@ -105,28 +138,35 @@ body {
     margin-left: 20px;
 }
 
+.ml-50 {
+    margin-left: 50px;
+}
+.mr-5 {
+    margin-right: 5px;
+}
+
+
+.mr-6 {
+    margin-right: 6px;
+}
+.mr-15 {
+    margin-right: 15px;
+}
+
+.mr-30 {
+    margin-right: 30px;
+}
 .mr-10 {
     margin-right: 10px;
 }
 
-.mt-10 {
-    margin-top: 10px;
+
+.mb-4 {
+    margin-bottom: 4px;
 }
 
-.mt-15 {
-    margin-top: 15px;
-}
-
-.mt-20 {
-    margin-top: 20px;
-}
-
-.mt-30 {
-    margin-top: 30px;
-}
-
-.ml-50 {
-    margin-left: 50px;
+.mb-8 {
+    margin-bottom: 8px;
 }
 
 .mb-10{
@@ -136,6 +176,24 @@ body {
 .mb-20{
     margin-bottom:20px;
 }
+
+
+.mb-15{
+    margin-bottom: 15px;
+}
+.mb-40{
+    margin-bottom: 40px;
+}
+
+.plr-8 {
+    padding: 0 8px;
+}
+.plr-15{
+    padding: 0 15px;
+}
+
+
+
 
 .shadow {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
