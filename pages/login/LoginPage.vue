@@ -1,0 +1,151 @@
+<template>
+    <div class="login-page">
+        <NavCom logoUrl="https://assets.codemart.com/scripts/97b8f071e76549f45dfbe527295955ba.png">
+            <template #left-text>
+                互联网软件外包服务平台
+            </template>
+            <template #right-text>
+                还没有注册账号？
+            </template>
+            <template #button>
+                <nuxt-link :to="{name:'register-RegisterPage'}">
+                    <SmallButton>注册</SmallButton>
+                </nuxt-link>
+            </template>
+        </NavCom>
+        <div class="container just-center">
+            <div v-show="flag" class="con-tab1">
+                <div class="con-title mt-40 mb-14">微信扫码登录</div>
+                <img src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQH_7zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyREJyTUJPVEtleTMxNnZyTnh6MVcAAgSPTTFjAwQQDgAA"
+                    alt="">
+                <div class="mt-35">
+                    <span class="link-style" @click="openFlag">使用账号密码登录</span>
+                </div>
+            </div>
+            <div v-show="!flag" class="con-tab2 form-wrap plr-15">
+                <div class="con-title mt-40 mb-14">账号密码登录</div>
+                <TipInput v-model="userAccount" :tipFlag="accountFlag" placeholder="手机号 / 用户名 / 电子邮箱" tipText="请输入账号"
+                    :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
+                <TipInput v-model="passWord" :tipFlag="passwordFlag" placeholder="请输入密码" tipText="请输入密码"
+                    :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
+                <div class="just-between fs-14">
+                    <div class="cur-point align-center">
+                        <input type="checkbox">
+                        <span class="plr-8">
+                            记住我
+                        </span>
+                    </div>
+                    <div class="cur-point">
+                        找回密码
+                    </div>
+                </div>
+                <SubmitButton class="mt-15">登录</SubmitButton>
+                <div class="wechat-tip mt-35">
+                    <img class="mr-6" src="@/assets/image/icon-wechat.png" alt="">
+                    <span @click="openFlag">使用微信扫码登录</span>
+                </div>
+            </div>
+        </div>
+        <FootInfo></FootInfo>
+       
+    </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            flag: true,
+            userAccount: "",
+            passWord: "",
+            accountFlag: false,
+            passwordFlag: false,
+        };
+    },
+    asyncData() {
+        return {};
+    },
+    methods: {
+        openFlag() {
+            this.flag = !this.flag;
+        },
+        checkForm() {
+            console.log(this.userAccount);
+            if (!this.userAccount) {
+                console.log("没输入");
+                this.accountFlag = true;
+            }
+        }
+    },
+}
+</script>
+<style scoped>
+.login-page {
+    position: relative;
+    min-width: 320px;
+    height: 100vh;
+}
+
+
+.container .con-tab1 {
+    display: inline-block;
+    text-align: center;
+}
+
+.container img {
+    width: 250px;
+    display: block;
+}
+
+.con-tab1 .link-style {
+    font-size: 14px;
+    color: #9B9B9B;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.con-title {
+    font-size: 21px;
+    padding: 14px 0;
+    text-align: center;
+    color: black;
+}
+
+
+.form-wrap {
+    width: 322px;
+    margin: auto;
+}
+
+
+.wechat-tip {
+    text-align: center;
+    color: #9B9B9B;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.wechat-tip img {
+    width: 16px;
+    height: 16px;
+}
+
+
+.cur-point {
+    cursor: pointer;
+}
+
+.con-tab2 {
+    color: #727F8F;
+}
+
+@media screen and (max-width: 480px) {
+    .form-wrap {
+        width: 100%;
+    }
+}
+
+</style> 
