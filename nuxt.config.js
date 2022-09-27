@@ -20,19 +20,19 @@ module.exports = {
     host: '0.0.0.0' // default: localhost,
   },
 
-  serverMiddleware:[
+  serverMiddleware: [
     '~/server/index.js'
   ],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-<<<<<<< HEAD
+
   css: [
     'element-ui/lib/theme-chalk/index.css',
     '@assets/css/main.css'
   ],
-=======
-  css: ['element-ui/lib/theme-chalk/index.css','@/assets/css/main.css'],
->>>>>>> 93e11ae2daa3ab476a3bc89bc4848d74190c2e37
+
+  css: ['element-ui/lib/theme-chalk/index.css', '@/assets/css/main.css'],
+
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['@/plugins/element-ui', '@/plugins/axios'],
