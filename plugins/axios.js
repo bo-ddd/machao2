@@ -42,11 +42,13 @@ export default function({ $axios, redirect }) {
     )
   
     $axios.onError(error => {
-      const code = parseInt(error.response && error.response.status)
-      if (code === 400) {
-        redirect('/404')
-      } else if (code === 500) {
-        redirect('/500')
-      }
+      console.log('--------------------axios error-------------')
+      console.log(error)
+      // const code = parseInt(error.response && error.response.status)
+      // if (code === 400) {
+      //   redirect('/404')
+      // } else if (code === 500) {
+      //   redirect('/500')
+      // }
     })
   }
