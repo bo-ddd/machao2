@@ -1,7 +1,6 @@
 const express = require('express')
 const Database = require('./db')
 const requestMiddleware = require('./middleware/requestMiddleware')
-const fs = require('fs')
 const path = require('path')
 
 class App{
