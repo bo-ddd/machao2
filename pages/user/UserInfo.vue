@@ -8,7 +8,7 @@
 <script>
 export default {
   async asyncData({ $axios }) {
-    return await $axios.post('http://localhost:3000/api/user/info')
+    return await $axios.post('/api/user/info')
   },
 }
 </script>
