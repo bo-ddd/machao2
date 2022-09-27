@@ -25,7 +25,7 @@ export default {
     methods: {
         checkForm() {
             console.log(4);
-            if (this.father == '') {
+            if (this.father === '') {
                 this.tipFlag = true;
             } else {
                 this.tipFlag = false;

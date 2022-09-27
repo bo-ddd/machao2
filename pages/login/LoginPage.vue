@@ -22,7 +22,7 @@
                     <span class="link-style" @click="openFlag">使用账号密码登录</span>
                 </div>
             </div>
-            <div v-show="!flag" class="con-tab2 tab-wrap plr-15">
+            <div v-show="!flag" class="con-tab2 form-wrap plr-15">
                 <div class="con-title mt-40 mb-14">账号密码登录</div>
                 <TipInput v-model="userAccount" :tipFlag="accountFlag" placeholder="手机号 / 用户名 / 电子邮箱" tipText="请输入账号"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
@@ -51,11 +51,6 @@
     </div>
 </template>
 <script>
-import TipInput from '~/components/TipInput.vue';
-import SubmitButton from '../../components/SubmitButton.vue';
-import SmallButton from '~/components/SmallButton.vue';
-import NavCom from '../../components/NavCom.vue';
-import FootInfo from '../../components/FootInfo.vue';
 export default {
     data() {
         return {
@@ -81,7 +76,6 @@ export default {
             }
         }
     },
-    components: { TipInput, SubmitButton, SmallButton, NavCom, FootInfo }
 }
 </script>
 <style scoped>
@@ -118,7 +112,7 @@ export default {
 }
 
 
-.tab-wrap {
+.form-wrap {
     width: 322px;
     margin: auto;
 }
@@ -149,7 +143,7 @@ export default {
 }
 
 @media screen and (max-width: 480px) {
-    .tab-wrap {
+    .form-wrap {
         width: 100%;
     }
 }
