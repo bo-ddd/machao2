@@ -16,13 +16,13 @@
         <div class="container just-center">
             <div class="form form-wrap">
                 <div class="con-title mt-40 mb-40">注册需求方</div>
-                <TipInput v-model="userName" :tipFlag="accountFlag" placeholder="用户名 (即个性后缀，注册后无法修改)" tipText="请输入用户名"
+                <TipInput v-model="userName"  placeholder="用户名 (即个性后缀，注册后无法修改)" tipText="请输入用户名"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput v-model="iphoneCode" :tipFlag="accountFlag" placeholder="请输入手机验证码" tipText="请输入手机验证码"
+                <TipInput v-model="iphoneCode"  placeholder="请输入手机验证码" tipText="请输入手机验证码"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput v-model="passWord" :tipFlag="accountFlag" placeholder="请输入密码" tipText="请输入密码"
+                <TipInput v-model="passWord"  placeholder="请输入密码" tipText="请输入密码"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput v-model="againPassWord" :tipFlag="accountFlag" placeholder="请确认密码" tipText="请确认密码"
+                <TipInput v-model="againPassWord" placeholder="请确认密码" tipText="请确认密码"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
             </div>
         </div>
