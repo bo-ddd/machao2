@@ -1,10 +1,12 @@
-const app = require('express')()
+const express = require('express')
+const mount = require('./middleware/mount')
+const app = express()
+app.use(express.json())
+app.use(mount)
 
-app.post('/user/info', (req, res)=>{
-    res.json({
-        username: 'xiaoming'
-    })
-})
+const userRouter = require('./user')
+
+app.use('/user', userRouter);
 
 module.exports = {
     path: '/api',

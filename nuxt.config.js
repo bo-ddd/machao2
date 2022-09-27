@@ -11,7 +11,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    { rel: "stylesheet", href: "https://at.alicdn.com/t/c/font_3673704_5a4r366dtzn.css?spm=a313x.7781069.1998910419.75&file=font_3673704_5a4r366dtzn.css" }],
   },
 
   server: {
@@ -24,7 +25,14 @@ module.exports = {
   ],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
+<<<<<<< HEAD
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    '@assets/css/main.css'
+  ],
+=======
   css: ['element-ui/lib/theme-chalk/index.css','@/assets/css/main.css'],
+>>>>>>> 93e11ae2daa3ab476a3bc89bc4848d74190c2e37
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['@/plugins/element-ui', '@/plugins/axios'],
@@ -47,7 +55,7 @@ module.exports = {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'http://localhost:3000/',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
