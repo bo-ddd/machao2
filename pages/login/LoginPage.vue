@@ -4,10 +4,14 @@
             <div class="nav-left align-center">
                 <img class="logo-img mr-30 img-s-28"
                     src="https://assets.codemart.com/scripts/97b8f071e76549f45dfbe527295955ba.png" alt="">
-                互联网软件外包服务平台
+                <span class="nav-left-text">
+                    互联网软件外包服务平台
+                </span>
             </div>
             <div class="nav-right align-center">
-                还没注册账号？
+                <span class="nav-right-text">
+                    还没注册账号？
+                </span>
                 <SmallButton>注册</SmallButton>
             </div>
         </div>
@@ -21,7 +25,7 @@
                     <span class="link-style" @click="openFlag">使用账号密码登录</span>
                 </div>
             </div>
-            <div v-show="!flag" class="con-tab2 tab-wrap">
+            <div v-show="!flag" class="con-tab2 tab-wrap plr-15">
                 <div class="con-title mt-40 mb-14">账号密码登录</div>
                 <TipInput v-model="userAccount" :tipFlag="accountFlag" placeholder="手机号 / 用户名 / 电子邮箱" tipText="请输入账号"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
@@ -46,10 +50,10 @@
             </div>
         </div>
 
-        <div class="foot flex-ja-center tip-text">
+        <div class="foot foot-flex tip-text">
             <div class="logo plr-8"><img class="logo-img img-s-21"
                     src="https://assets.codemart.com/scripts/97b8f071e76549f45dfbe527295955ba.png" alt=""></div>
-            <div class="tip-text plr-8">
+            <div class="foot-text plr-8">
                 Copyright © 2014-2022 深圳市英选码市科技有限公司 版权所有 备案号：<a class="link-style"
                     href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action">粤ICP备18032316号-1</a>
             </div>
@@ -91,6 +95,7 @@ export default {
 <style scoped>
 .login-page {
     position: relative;
+    min-width: 320px;
     height: 100vh;
 }
 
@@ -122,6 +127,15 @@ export default {
     position: absolute;
     bottom: 0;
     padding: 20px 0;
+}
+
+.foot-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.foot-text {
+    text-align: center;
 }
 
 .img-s-21 {
@@ -198,5 +212,38 @@ export default {
 
 .con-tab2 {
     color: #727F8F;
+}
+
+@media screen and (max-width: 770px) {
+    .nav-left-text {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-right-text {
+        display: none;
+    }
+
+    .tab-wrap {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .foot-text {
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .foot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 </style>
