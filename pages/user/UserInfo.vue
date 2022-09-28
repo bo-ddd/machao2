@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>userinfo</h1>
+    <div>{{ username }}</div>
     <el-button type='primary' @click='register'>注册</el-button>
     <el-button type='primary' @click='getUserList'>注册</el-button>
   </div>
@@ -10,7 +11,7 @@
 export default {
   async asyncData({ $axios }) {
     const res =  await $axios.post('/api/user/info')
-    return res;
+    return { ...res.data };
   },
   methods:{
     async register(){
