@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <FootInfo></FootInfo>
+        <FootInfo class="position-bottom"></FootInfo>
 
     </div>
 </template>
@@ -77,6 +77,10 @@ export default {
 }
 </script>
 <style scoped>
+.position-bottom{
+    position: absolute;
+    bottom: 0;
+}
 .login-page {
     position: relative;
     min-width: 320px;
