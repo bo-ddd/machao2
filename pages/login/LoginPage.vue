@@ -1,6 +1,6 @@
 <template>
     <div class="login-page">
-        <NavCom logoUrl="https://assets.codemart.com/scripts/97b8f071e76549f45dfbe527295955ba.png">
+        <NavCom toUrl="index" logoUrl="https://assets.codemart.com/scripts/97b8f071e76549f45dfbe527295955ba.png">
             <template #left-text>
                 互联网软件外包服务平台
             </template>
@@ -8,9 +8,7 @@
                 还没有注册账号？
             </template>
             <template #button>
-                <nuxt-link :to="{name:'register-RegisterPage'}">
-                    <SmallButton>注册</SmallButton>
-                </nuxt-link>
+                    <SmallButton toUrl='register-RegisterPage'>注册</SmallButton>
             </template>
         </NavCom>
         <div class="container just-center">
@@ -24,9 +22,9 @@
             </div>
             <div v-show="!flag" class="con-tab2 form-wrap plr-15">
                 <div class="con-title mt-40 mb-14">账号密码登录</div>
-                <TipInput v-model="userAccount" :tipFlag="accountFlag" placeholder="手机号 / 用户名 / 电子邮箱" tipText="请输入账号"
+                <TipInput class="mt-15 mb-8" v-model="userAccount" :tipFlag="accountFlag" placeholder="手机号 / 用户名 / 电子邮箱" tipText="请输入账号"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput v-model="passWord" :tipFlag="passwordFlag" placeholder="请输入密码" tipText="请输入密码"
+                <TipInput class="mt-15 mb-8" v-model="passWord" :tipFlag="passwordFlag" placeholder="请输入密码" tipText="请输入密码"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
                 <div class="just-between fs-14">
                     <div class="cur-point align-center">
@@ -83,8 +81,12 @@ export default {
     position: relative;
     min-width: 320px;
     height: 100vh;
+    min-height: 650px;
 }
-
+.container{
+    position: absolute;
+    width: 100%;
+}
 
 .container .con-tab1 {
     display: inline-block;

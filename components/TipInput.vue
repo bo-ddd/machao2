@@ -1,6 +1,6 @@
 <template>
     <div class="tip-input">
-        <input class="mt-15 mb-8" :value="father" @input="changeValue" @focus="selected" @blur="checkForm" type="text"
+        <input class="mb-8" :value="father" @input="changeValue" @focus="selected" @blur="checkForm" type="text"
             :placeholder='placeholder'>
         <div v-show="tipFlag" class="tip-error"><img :src="errorImg" alt="">{{tipText}}</div>
     </div>
