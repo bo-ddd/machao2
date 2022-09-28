@@ -1,8 +1,21 @@
 <template>
+                <nuxt-link :to="{name:toUrl}">
     <button class="small-btn">
-        <slot></slot>
+                    <slot></slot>
     </button>
+                </nuxt-link>
 </template>
+<script>
+export default{
+    props:['toUrl'],
+    data(){
+        return{
+
+        }
+    }
+}
+</script>
+
 <style scoped>
 .small-btn {
     border: 1px solid #4289dc;
