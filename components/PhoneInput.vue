@@ -1,6 +1,6 @@
 <template>
     <div class="phone-input">
-        <div class="input-box mt-15 mb-8">
+        <div class="input-box mb-8">
             <input class="" :value="father" @input="changeValue" @focus="selected" @blur="checkForm" type="text"
                 :placeholder='placeholder'>
             <button>发送验证码</button>
@@ -53,27 +53,29 @@ export default {
 .input-box {
     display: grid;
     grid-template-columns: 1fr 0.55fr;
-    border-radius: 4px;
+    border-radius: 3px;
     box-sizing: border-box;
     border: 1px solid v-bind(borderColor);
 }
+/* */
 .input-box:focus-within {
 
     border: 1px solid #4289DC;
 }
 .input-box input:focus + button{
     border-left: 1px solid #4289DC;
-    /* color: red; */
 }
-
+.input-box button:focus{
+    border-left: 1px solid #4289DC;
+color: #4289DC;
+}
 .input-box button {
     border-left: 1px solid v-bind(borderColor);
     height: 100%;
     background-color: white;
     color: v-bind(btnColor);
     font-size: 12px;
-}
-
+} 
 .mt-15 {
     margin-top: 15px;
 }
