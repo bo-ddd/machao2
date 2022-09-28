@@ -2,24 +2,23 @@ const App = require('../app')
 
 class UserController extends App{
     constructor(){
-        super()
+        super();
     }
-
-    info(ctx){
-        const { res } = ctx;
-        res.json({
+    info(){
+        const { res } = this.ctx;
+        res.success({
             username: 'xiaoming'
         })
     }
 
-    async list(ctx){
-        const { res } = ctx;
+    async list(){
+        const { res } = this.ctx;
         let data = await res.sql('select * from user_info');
         res.json(data);
     }
 
-    async register(ctx){
-        const { res, req } = ctx;
+    async register(){
+        const { res, req } = this.ctx;
         const { username, password, phoneNumber } = req.body;
         
         if(!username){
