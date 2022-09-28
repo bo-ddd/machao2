@@ -298,6 +298,14 @@
       </div>
     </div>
 
+    <!--为什么选择码市  -->
+    <div class="check-us-wrap">
+      <div class="check-us wrap">
+        <p class="title text-center">他们为什么选择码市</p>
+        <p class="desc text-center fs-16 c-bababa">我们的需求方在码市平台体验高效精准的人才匹配服务，开发者体验更便捷的接单服务。</p>
+      </div>
+    </div>
+
     <!-- 加入我们 -->
     <div class="join-us-wrap">
       <div class="join-us wrap">
@@ -305,6 +313,46 @@
         <div class="btn-wrap mt-50">
           <div class="large-btn them-low fs-18">加入码市</div>
         </div>
+      </div>
+    </div>
+
+    
+
+    <!-- 关于码超 -->
+    <div class="about-us-wrap">
+      <div class="about-us wrap">
+        <div class="about-info">
+          <div class="about-info-left">
+            <div class="about-info-list fs-16">
+              <div class="about-info-item">关于码市</div>
+              <div class="about-info-item">帮助</div>
+              <div class="about-info-item">联系方式</div>
+            </div>
+            <div class="about-info-list fs-14 c-bababa">
+              <div class="about-info-item">码市介绍</div>
+              <div class="about-info-item">如何发布项目需求?</div>
+              <div class="about-info-item">0755-33940</div>
+            </div>
+            <div class="about-info-list fs-14 c-bababa">
+              <div class="about-info-item">码市案例</div>
+              <div class="about-info-item">如何为发布的项目需求定价?</div>
+              <div class="about-info-item">support @ codemart.com</div>
+            </div>
+            <div class="about-info-list fs-14 c-bababa">
+              <div class="about-info-item">内容中心</div>
+              <div class="about-info-item">查看更多></div>
+              <div class="about-info-item">周一至周五 09:30-19:00</div>
+            </div>
+          </div>
+          <div class="about-info-right text-right">
+            <img src="~/assets/image/logo.png">
+          </div>
+        </div>
+      </div>
+
+      <!-- 版本号 -->
+      <div class="copy-wrap text-center wrap fs-12">
+        Copyright © 2014-2022 深圳市英选码市科技有限公司 版权所有 备案号：粤ICP备18032316号-1
       </div>
     </div>
   </div>
@@ -351,17 +399,17 @@
     },
   ]
 export default {
-  name: 'IndexPage',
-  data(){
-    return {
-      knowList,
-    };
-  },
-  methods:{
-    handleKnowItem(item){
-      item.bool = !item.bool;
-    }
-  }
+    name: "IndexPage",
+    data() {
+        return {
+            knowList,
+        };
+    },
+    methods: {
+        handleKnowItem(item) {
+            item.bool = !item.bool;
+        }
+    },
 }
 </script>
 <style scoped>
@@ -846,5 +894,42 @@ header {
 .join-us .btn-wrap{
   display: flex;
   justify-content: center;
+}
+
+.about-us-wrap .about-us .about-info{
+  padding: 64px 0;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+}
+
+.about-info-left{
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.about-info .about-info-right  img{
+  width: 100px;
+}
+
+.copy-wrap{
+  padding: 20px 0;
+}
+
+.about-info-list{
+  display: flex;
+  align-items: center;
+}
+
+.about-info-list .about-info-item{
+  width: 100%;
+}
+
+.about-info{
+  border-bottom: 1px solid #ccc;
+}
+
+.check-us{
+  padding: 100px 0;
 }
 </style>
