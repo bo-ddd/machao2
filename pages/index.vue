@@ -302,7 +302,25 @@
     <div class="check-us-wrap">
       <div class="check-us wrap">
         <p class="title text-center">他们为什么选择码市</p>
-        <p class="desc text-center fs-16 c-bababa">我们的需求方在码市平台体验高效精准的人才匹配服务，开发者体验更便捷的接单服务。</p>
+        <p class="desc text-center fs-16 c-bababa mt-10">我们的需求方在码市平台体验高效精准的人才匹配服务，开发者体验更便捷的接单服务。</p>
+
+        <!-- 轮播图 -->
+        <div class="check-us-detail mt-50">
+            <div class="detail-container shadow">
+              <div class="detail-item">
+                <div class="detail-item-left">
+                  <img src="https://assets.codemart.com/images/index/avatar/zhq.png">
+                </div>
+                <div class="detail-item-right">
+                  <div>
+                    <img src="~/assets/image/semi.png">
+                    <p class="desc"> “我们从码市创办之初就在码市提供服务了，现在全码市也名列第五咯，码市上的项目相比其他平台会更容易消化，因为大部分的需求方都比较专业，能说清楚自己的要求，也了解软件开发过程，甚至有的专业需求方能自己提供流程图脑图等资料，就很不错。”</p>
+                  </div>
+                  <p class="from">赵瀚卿·“零云”产品负责人</p>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
 
@@ -838,8 +856,11 @@ header {
   align-items: center;
   justify-content: space-between;
   padding:20px 32px;
-  border-top: 1px solid #ccc;
   border-bottom: .5px solid #ccc;
+}
+
+.task-desc-item:nth-child(1){
+  border-top: .5px solid #ccc;
 }
 
 .arrow{
@@ -850,6 +871,7 @@ header {
   padding:20px 32px;
   line-height: 150%;
   background: #fff;
+  border-bottom: .5px solid #ccc;
 }
 
 .task-desc-item:hover{
@@ -931,5 +953,47 @@ header {
 
 .check-us{
   padding: 100px 0;
+}
+
+.check-us-detail .detail-container{
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 100px;
+  width: 980px;
+  margin: 0 100px;
+}
+
+.check-us-detail .detail-container .detail-item{
+  height: 330px;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  border-radius: 10px;
+}
+
+.detail-item .detail-item-left img{
+  width: 184px;
+  height: 256px;
+  border-radius: 5px;
+}
+
+.detail-item .detail-item-left{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.detail-item .detail-item-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.detail-item .detail-item-right img{
+  width: 54px;
+  height: 44px;
+}
+
+.detail-item-right .desc{
+  line-height: 200%;
 }
 </style>
