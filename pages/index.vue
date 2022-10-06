@@ -45,7 +45,7 @@
       <div class="view-box">
 
         <!-- 显示第一个banner -->
-        <!-- <div class="view-one">
+        <div class="view-one" v-show="index === 1">
           <div class="index-top">
             <div class="top-motto-container">
               <p class="top-motto">
@@ -63,10 +63,9 @@
               src="https://656e-env-iknzbddq-1254055692.tcb.qcloud.la/cloudbase-cms/upload/2021-12-02/b96c4m4uqlkvtkgcaitxc8t22036wwhb_.png"
               alt="">
           </div>
-        </div> -->
+        </div>
 
-
-        <div class="view-two">
+        <div class="view-two" v-show="index === 2">
           <div class="index-top">
             <div class="top-motto-container">
               新版阶段划分
@@ -82,8 +81,7 @@
 
         <!-- 切换banner -->
         <div class="check-banner">
-          <div class="check check-active"></div>
-          <div class="check-un"></div>
+          <div :class="[{'check' :index == item},{'check-active':index == item},{'check-un':index != item}]" v-for="item in 2" :key="item" @click="handleChangeBanner(item)"></div>
         </div>
       </div>
     </div>
@@ -334,8 +332,6 @@
       </div>
     </div>
 
-    
-
     <!-- 关于码超 -->
     <div class="about-us-wrap">
       <div class="about-us wrap">
@@ -421,11 +417,15 @@ export default {
     data() {
         return {
             knowList,
+            index:2,
         };
     },
     methods: {
         handleKnowItem(item) {
             item.bool = !item.bool;
+        },
+        handleChangeBanner(index){
+          this.index = index;
         }
     },
 }
@@ -546,6 +546,10 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 91px 0;
+}
+
+.view-two,.view-one{
+  height: 380px;
 }
 
 .view-box .check-banner {
