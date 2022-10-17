@@ -1,5 +1,5 @@
 <template>
-    <header class="fs-14 header-max mt-10">
+    <header class="fs-14 header-max">
         <div class="header-l">
             <nuxt-link to="/">
                 <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
@@ -52,7 +52,6 @@ header {
     align-items: center;
     padding: 0 28px;
     background: v-bind(background);
-    display: flow-root;
 }
 
 .header-max {
