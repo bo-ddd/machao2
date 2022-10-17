@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div class="top">
-            <!-- 用来占位 -->
-        </div>
+        <HeaderCom class="header-com" :background="'#fff'" fontColor="#000" :logo="require('~/assets/image/logo1.png')"></HeaderCom>
         <header class="header">
             <div class="container">
                 <div class="container-title align-center">
@@ -18,7 +16,7 @@
             </div>
         </header>
         <main>
-            <div class="main wrap mt-18">
+            <div class="main square-wrap mt-18">
                 <div class=" list align-center">
                     <p class="title fs-14 mr-44">平台</p>
                     <ul class="list-text align-center ">
@@ -47,20 +45,28 @@
                 <el-pagination class="pagination" background layout="prev, pager, next" :current-page="1"
                     :page-size="pageSize" :total="list.length">
                 </el-pagination>
+              
             </div>
 
         </main>
+        <footer class="footer mt-45">
+            <FootInfo></FootInfo>
+        </footer>
     </div>
 </template>
 
 <script>
 
 import TemplateBox from '@/components/TemplateBox';
+import FootInfo from "@/components/FootInfo.vue";
+import HeaderCom from "@/components/HeaderCom";
 
 
 export default {
     components: {
-        TemplateBox
+        TemplateBox,
+        FootInfo,
+        HeaderCom
     },
     data() {
         return {
@@ -71,119 +77,119 @@ export default {
                     url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
-                    typrInfo: '小程序'
+                    typeInfo: '小程序'
                 },
                 {
                     id: 2,
                     url: require('@/assets/image/template_2.png'),
                     title: '电影演出票务原型',
                     views: '617',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 3,
                     url: require('@/assets/image/template_3.png'),
                     title: '租房原型',
                     views: '443',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 4,
                     url: require('@/assets/image/template_4.png'),
                     title: '二手车交易原型',
                     views: '341',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 5,
                     url: require('@/assets/image/template_4.png'),
                     title: '二手车交易原型',
                     views: '341',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 6,
                     url: require('@/assets/image/template_3.png'),
                     title: '租房原型',
                     views: '443',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 7,
                     url: require('@/assets/image/template_2.png'),
                     title: '电影演出票务原型',
                     views: '617',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 8,
                     url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
-                    typrInfo: '小程序'
+                    typeInfo: '小程序'
                 },
                 {
                     id: 9,
                     url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
-                    typrInfo: '小程序'
+                    typeInfo: '小程序'
                 },
                 {
                     id: 10,
                     url: require('@/assets/image/template_2.png'),
                     title: '电影演出票务原型',
                     views: '617',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 11,
                     url: require('@/assets/image/template_3.png'),
                     title: '租房原型',
                     views: '443',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 12,
                     url: require('@/assets/image/template_4.png'),
                     title: '二手车交易原型',
                     views: '341',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 13,
                     url: require('@/assets/image/template_4.png'),
                     title: '二手车交易原型',
                     views: '341',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 14,
                     url: require('@/assets/image/template_3.png'),
                     title: '租房原型',
                     views: '443',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 15,
                     url: require('@/assets/image/template_2.png'),
                     title: '电影演出票务原型',
                     views: '617',
-                    typrInfo: 'APP'
+                    typeInfo: 'APP'
                 },
                 {
                     id: 16,
                     url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
-                    typrInfo: '小程序'
+                    typeInfo: '小程序'
                 },
                 {
                     id: 17,
                     url: require('@/assets/image/template_1.png'),
                     title: '点餐小程序原型',
                     views: '1303',
-                    typrInfo: '小程序'
+                    typeInfo: '小程序'
                 },
             ],
             pageSize: 12,
@@ -202,8 +208,8 @@ export default {
 </script>
 
 <style scoped>
-.top {
-    height: 64px;
+.header-com{
+    padding: 12px 22px;
 }
 
 .header {
@@ -275,7 +281,11 @@ export default {
     padding-bottom: 40px;
 }
 
-.pagination {
+.main .pagination {
     text-align: center;
+}
+
+.footer{
+    height: 56px;
 }
 </style>
