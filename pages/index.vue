@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container">
-      <HeaderCom class="mt-10"></HeaderCom>
+      <HeaderCom class="mt-10 padding-0_28"></HeaderCom>
       <!-- 头部宽屏-->
       <!-- <header class="fs-14 header-max mt-10">
         <div class="header-l">
@@ -446,6 +446,9 @@ export default {
   }
 }
 
+.padding-0_28{
+  padding: 0 28px;
+}
 
 .container {
   background: #2b3a42;

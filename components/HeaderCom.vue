@@ -41,6 +41,10 @@ export default{
             type:String,
             default:'#2b3a42',
         },
+        fontColor:{
+            type:String,
+            default:'#fff',
+        }
     }
 }
 </script>
@@ -50,12 +54,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 28px;
     background: v-bind(background);
 }
 
 .header-max {
-    color: #fff;
+    color: v-bind(fontColor);
 }
 
 .header-min>img {
