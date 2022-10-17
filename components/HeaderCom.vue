@@ -77,7 +77,6 @@ header {
 .header-l {
     display: flex;
     align-items: center;
-    padding: 30px 0;
 }
 
 .nav-list {
