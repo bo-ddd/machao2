@@ -1,8 +1,9 @@
 <template>
   <div class="home">
     <div class="container">
+      <HeaderCom class="mt-10"></HeaderCom>
       <!-- 头部宽屏-->
-      <header class="fs-14 header-max mt-10">
+      <!-- <header class="fs-14 header-max mt-10">
         <div class="header-l">
           <nuxt-link to="/">
             <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
@@ -32,7 +33,7 @@
             <div class="btn btn-border">发布项目</div>
           </div>
         </div>
-      </header>
+      </header> -->
       <!-- 头部窄屏 -->
       <header class="header-min">
         <nuxt-link to="/">
@@ -374,6 +375,7 @@
 </template>
 
 <script>
+import HeaderCom from '~/components/HeaderCom.vue';
   const knowList = [
     {
       id : 1,
@@ -417,17 +419,18 @@ export default {
     data() {
         return {
             knowList,
-            index:2,
+            index: 1,
         };
     },
     methods: {
         handleKnowItem(item) {
             item.bool = !item.bool;
         },
-        handleChangeBanner(index){
-          this.index = index;
+        handleChangeBanner(index) {
+            this.index = index;
         }
     },
+    components: { HeaderCom }
 }
 </script>
 <style scoped>
@@ -443,76 +446,12 @@ export default {
   }
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 28px;
-}
-
-.header-max {
-  color: #fff;
-}
-
-.header-min>img {
-  width: 24px;
-}
-
-.header-min {
-  padding: 15px 28px;
-}
-
-.logo {
-  height: 30px;
-}
 
 .container {
   background: #2b3a42;
   display: flow-root;
 }
 
-.header-l {
-  display: flex;
-  align-items: center;
-  padding: 30px 0;
-}
-
-.nav-list {
-  display: flex;
-  margin-left: 30px;
-}
-
-.nav-list .nav-item {
-  width: 84px;
-  position: relative;
-  margin-right: 7px;
-}
-
-.nav-list .nav-item svg {
-  position: absolute;
-  top: -10px;
-  right: -3px;
-}
-
-.btns .btn {
-  display: inline-block;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 0 5px;
-}
-
-.btns .btn a {
-  color: #fff;
-}
-
-.btn-border {
-  border: 1px solid #ccc;
-}
-
-.btns .btn:hover {
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
 
 .index-top {
   color: #fff;

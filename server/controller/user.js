@@ -1,5 +1,5 @@
-const App = require('../app')
-
+const App = require('../app');
+const Jwt = require('../../assets/util/jwt.js');
 class UserController extends App {
     constructor() {
         super();
@@ -57,6 +57,19 @@ class UserController extends App {
             })
 
         })
+    }
+
+    async login(){
+        const { res, req } = this.ctx;
+        const { username , password } = req.body;
+        let data =await res.sql('select * from user where username=? and password=?',[username,password]);
+        if(data.data.length){
+            let resData = data.data[0];
+            let token = Jwt.sign(resData);
+            res.success({'token':token});
+        }else{
+            res.fail('fail')
+        }
     }
 }
 

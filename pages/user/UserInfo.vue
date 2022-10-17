@@ -4,6 +4,7 @@
     <div>{{ username }}</div>
     <el-button type='primary' @click='register'>注册</el-button>
     <el-button type='primary' @click='getUserList'>注册</el-button>
+    <el-button type='primary' @click='login'>登录</el-button>
   </div>
 </template>
 
@@ -24,6 +25,13 @@ export default {
     },
     async getUserList(){
       const res = await this.$axios.post('/api/user/list')
+      console.log(res);
+    },
+    async login(){
+      const res = await this.$axios.post('/api/user/login', {
+        username: 'xiaoming',
+        password: '999999',
+      })
       console.log(res);
     }
   }
