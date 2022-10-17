@@ -98,7 +98,7 @@ header {
 
 .btns .btn {
     display: inline-block;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 5px;
     margin: 0 5px;
 }
