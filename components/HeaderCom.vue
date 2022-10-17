@@ -2,7 +2,7 @@
     <header class="fs-14 header-max">
         <div class="header-l">
             <nuxt-link to="/">
-                <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
+                <img class="logo" :src="logo" alt="logo">
             </nuxt-link>
             <div class="nav-list">
                 <div class="nav-item">
@@ -44,6 +44,9 @@ export default{
         fontColor:{
             type:String,
             default:'#fff',
+        },
+        logo:{
+            type:String,
         }
     }
 }
@@ -70,7 +73,9 @@ header {
 }
 
 .logo {
-    height: 30px;
+    height: 50px;
+    position: relative;
+    top: 6px;
 }
 
 

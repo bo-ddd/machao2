@@ -2,7 +2,8 @@
   <div class="home">
     <div class="container">
       <!-- 头部宽屏-->
-      <HeaderCom class="mt-10 padding-15_28"></HeaderCom>
+      <!-- <img src="~/assets/image/LOGO2.png" alt=""> -->
+      <HeaderCom class="mt-10 padding-15_28" :logo="require('~/assets/image/LOGO2.png')"></HeaderCom>
       <!-- 头部窄屏 -->
       <header class="header-min">
         <nuxt-link to="/">
