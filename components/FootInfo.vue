@@ -1,7 +1,7 @@
 <template>
      <div class="foot tip-text">
 
-        <div class="foot-wrap">
+        <!-- <div class="foot-wrap">
             <div class="logo plr-8">
                 
                 <img v-if="theme=='white'" class="logo-img img-s-21 mr-15"
@@ -14,7 +14,7 @@
                 Copyright © 2014-2022 深圳市英选码市科技有限公司 版权所有 备案号：<a :class="'link-'+theme"
                     href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action">粤ICP备18032316号-1</a>
             </div>
-        </div>
+        </div> -->
 
             
         </div>

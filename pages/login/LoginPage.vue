@@ -12,15 +12,15 @@
             </template>
         </NavCom>
         <div class="container just-center">
-            <div v-show="flag" class="con-tab1">
+            <!-- <div v-show="flag" class="con-tab1">
                 <div class="con-title mt-40 mb-14">微信扫码登录</div>
                 <img src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQH_7zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyREJyTUJPVEtleTMxNnZyTnh6MVcAAgSPTTFjAwQQDgAA"
                     alt="">
                 <div class="mt-35">
                     <span class="link-style" @click="openFlag">使用账号密码登录</span>
                 </div>
-            </div>
-            <div v-show="!flag" class="con-tab2 form-wrap plr-15">
+            </div> -->
+            <div class="con-tab2 form-wrap plr-15">
                 <div class="con-title mt-40 mb-14">账号密码登录</div>
                 <TipInput class="mt-15 mb-8" v-model="userAccount" :tipFlag="accountFlag" placeholder="手机号 / 用户名 / 电子邮箱" tipText="请输入账号"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
@@ -38,13 +38,13 @@
                     </div>
                 </div>
                 <SubmitButton class="mt-15">登录</SubmitButton>
-                <div class="wechat-tip mt-35">
+                <!-- <div class="wechat-tip mt-35">
                     <img class="mr-6" src="@/assets/image/icon-wechat.png" alt="">
                     <span @click="openFlag">使用微信扫码登录</span>
-                </div>
+                </div> -->
             </div>
         </div>
-        <FootInfo class="position-bottom"></FootInfo>
+        <FootInfo theme="white" class="position-bottom"></FootInfo>
 
     </div>
 </template>
@@ -52,7 +52,7 @@
 export default {
     data() {
         return {
-            flag: true,
+            // flag: true,
             userAccount: "",
             passWord: "",
             accountFlag: false,
@@ -63,9 +63,9 @@ export default {
         return {};
     },
     methods: {
-        openFlag() {
-            this.flag = !this.flag;
-        },
+        // openFlag() {
+        //     this.flag = !this.flag;
+        // },
         checkForm() {
             console.log(this.userAccount);
             if (!this.userAccount) {
