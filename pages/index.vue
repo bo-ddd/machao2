@@ -309,19 +309,19 @@
         <div class="about-info">
           <div class="about-info-left">
             <div class="about-info-list fs-16">
-              <div class="about-info-item">关于码市</div>
+              <div class="about-info-item">关于码s</div>
               <div class="about-info-item">帮助</div>
               <div class="about-info-item">联系方式</div>
             </div>
             <div class="about-info-list fs-14 c-bababa">
-              <div class="about-info-item">码市介绍</div>
+              <div class="about-info-item">码s介绍</div>
               <div class="about-info-item">如何发布项目需求?</div>
-              <div class="about-info-item">0755-33940</div>
+              <div class="about-info-item">fsdaopjf</div>
             </div>
             <div class="about-info-list fs-14 c-bababa">
-              <div class="about-info-item">码市案例</div>
+              <div class="about-info-item">码s案例</div>
               <div class="about-info-item">如何为发布的项目需求定价?</div>
-              <div class="about-info-item">support @ codemart.com</div>
+              <div class="about-info-item">2014873253@qq.com</div>
             </div>
             <div class="about-info-list fs-14 c-bababa">
               <div class="about-info-item">内容中心</div>
@@ -330,13 +330,13 @@
             </div>
           </div>
           <div class="about-info-right text-right">
-            <img src="~/assets/image/logo.png">
+            <img src="~/assets/image/LOGO2.png">
           </div>
         </div>
       </div>
 
       <!-- 版本号 -->
-      <div class="copy-wrap text-center wrap fs-12">
+      <div class="copy-wrap text-center wrap fs-12" v-if="false">
         Copyright © 2014-2022 深圳市英选码市科技有限公司 版权所有 备案号：粤ICP备18032316号-1
       </div>
     </div>

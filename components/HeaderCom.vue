@@ -9,7 +9,7 @@
                     <a>找项目</a>
                 </div>
                 <div class="nav-item">
-                    <a> 原型广场</a>
+                    <a> 模板广场</a>
                     <svg class="new-tip" xmlns="http://www.w3.org/2000/svg" width="36" height="14" viewBox="0 0 36 14">
                         <g fill="none">
                             <rect width="36" height="14" fill="#F75288" rx="2"></rect>
