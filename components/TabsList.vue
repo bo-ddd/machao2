@@ -1,67 +1,30 @@
 <template>
     <div>
-        <HeaderCom class="header-com" :background="'#fff'" fontColor="#000" :logo="require('~/assets/image/logo1.png')">
-        </HeaderCom>
-        <!-- <header class="header">
-            <div class="container">
-                <div class="container-title align-center">
-                    <h1 class="title mr-10 c-ffffff">码市原型广场</h1>
-                    <span class="text c-ffffff fs-14 mt-10">[码市x墨刀]</span>
-                </div>
-                <div class="input-search align-center">
-                    <el-input v-model="input" placeholder="搜索素材" clearable class="input"></el-input>
-                    <el-button class="borderr-0 button" type="primary">
-                        <h3>搜 索</h3>
-                    </el-button>
-                </div>
-            </div>
-        </header> -->
-        <main>
-            <div class="main square-wrap mt-18">
-                <div class=" list align-center">
-                    <p class="title fs-14 mr-44">平台</p>
-                    <TabsList activeName="all" :data="list[0].childern " @list="getList"></TabsList>
-                </div>
-                <section class="section mt-40">
-                    <template-box v-for="item in renderList" :key="item.id" :src='item.url' :title="item.title"
-                        :views="item.views" :type-info="item.typeInfo">
-                    </template-box>
-                </section>
-                <el-pagination class="pagination" background layout="prev, pager, next" :current-page="1"
-                    :page-size="pageSize" :total="list.length">
-                </el-pagination>
+        <ul class="list align-center">
+            <li v-for="item in list" :key="item.id" :class="item.active==true?'active':''"
+                @click="activeParams(item.childer);active(item)">
 
-            </div>
-
-        </main>
-        <footer class="footer mt-45">
-            <FootInfo></FootInfo>
-        </footer>
+                <p class="fs-14 item">{{item.title}}</p>
+            </li>
+        </ul>
     </div>
 </template>
 
 <script>
-
-import TemplateBox from '@/components/TemplateBox';
-import FootInfo from "@/components/FootInfo.vue";
-import HeaderCom from "@/components/HeaderCom";
-import TabsList from "@/components/TabsList.vue";
-
 export default {
-    components: {
-        TemplateBox,
-        FootInfo,
-        HeaderCom,
-        TabsList,
+    props: {
+        activeName: {
+            type: String,
+            default: 'all'
+        }
     },
     data() {
         return {
-            input: '',
             list: [{
                 id: 1,
                 title: '全部',
                 active: true,
-                childern: [
+                childer: [
                     {
                         id: 1,
                         url: require('@/assets/image/officialwebsite-1.png'),
@@ -124,7 +87,7 @@ export default {
                 id: 2,
                 title: '官网',
                 active: false,
-                childern: [
+                childer: [
                     {
                         id: 21,
                         url: require('@/assets/image/template_1.png'),
@@ -138,7 +101,7 @@ export default {
                 id: 3,
                 title: '后台',
                 active: false,
-                childern: [
+                childer: [
                     {
                         id: 21,
                         url: require('@/assets/image/template_1.png'),
@@ -152,7 +115,7 @@ export default {
                 id: 4,
                 title: 'APP',
                 active: false,
-                childern: [
+                childer: [
                     {
                         id: 21,
                         url: require('@/assets/image/template_1.png'),
@@ -166,7 +129,7 @@ export default {
                 id: 5,
                 title: '小程序',
                 active: false,
-                childern: [
+                childer: [
                     {
                         id: 21,
                         url: require('@/assets/image/template_1.png'),
@@ -176,96 +139,47 @@ export default {
                     },
                 ]
             }],
-            pageSize: 6,
-            renderList: [],
         }
     },
-    created() {
-        this.renderList = this.list[0].childern
-    },
-    mounted() {
-        this.renderList = this.list.slice(0, this.pageSize);
-    },
+
     methods: {
-        getList(val) {
-            this.renderList = val;
-            console.log('父', val)
+        activeParams(params) {
+            //    params=='全部'? '':''
+            // console.log(params);
+            this.$emit('list', params);
+        },
+        active(el) {
+            // console.log(e.target);
+            // e.target.classList.add('active');
+            this.list.forEach(item => { item.active = false });
+            console.log(this.list)
+            el.active = true;
+            // this.$set(this.list,)
         }
     }
-
 }
-
 </script>
 
 <style scoped>
-.header-com {
-    padding: 12px 22px;
+.list {
+    justify-content: left;
 }
 
-.header {
-    width: 100%;
-    height: 320px;
-    background: url("../../assets/image/banner.png");
-    background-size: 100%;
-}
-
-.header .container {
-    width: 683px;
-    margin: 0 auto;
-    padding-top: 164px;
-}
-
-.header .container-title {
-    height: 60px;
-}
-
-.header .container-title .text {
-    background-color: #fb3867;
+.item {
+    --h: 32px;
     display: inline-block;
-    padding: 4px 16px;
-    border-radius: 3px;
-}
-
-.header .container .input-search {
-    width: 100%;
-    height: 48px;
-}
-
-.header .container :deep(.el-input__inner) {
-    border-radius: 0;
-    height: 100%;
-}
-
-.header .container .input,
-.button {
-    height: 100%;
-}
-
-.header .container .button {
-    padding: 14px 25px;
-}
-
-.main .list {
-    padding: 32px 0;
-    margin: 0 20px;
-    border-bottom: 1px solid #cccccc;
-}
-
-
-.main .section {
-    min-height: 316px;
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    column-gap: 32px;
-    padding-bottom: 40px;
-}
-
-.main .pagination {
+    width: 48px;
+    height: var(--h);
+    line-height: var(--h);
     text-align: center;
 }
 
-.footer {
-    height: 56px;
+.item:hover {
+    color: #2aa6ee;
+}
+
+.active {
+    background-color: #7fc8f31a;
+    color: #2aa6ee;
 }
 </style>
