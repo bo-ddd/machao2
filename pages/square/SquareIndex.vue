@@ -20,19 +20,22 @@
             <div class="main square-wrap mt-18">
                 <div class=" list align-center">
                     <p class="title fs-14 mr-44">平台</p>
-                    <TabsList activeName="all" :data="list[0].childern " @list="getList"></TabsList>
+                    <TabsList activeName="all"  :dataList="list" @list="getList"></TabsList>
                 </div>
-                <section class="section mt-40">
-                    <template-box v-for="item in renderList" :key="item.id" :src='item.url' :title="item.title"
+                <section class="section mt-40" v-if=" renderList.length != 0 ">
+                    <template-box  v-for="item in renderList" :key="item.id" :src='item.url' :title="item.title"
                         :views="item.views" :type-info="item.typeInfo">
                     </template-box>
                 </section>
-                <el-pagination class="pagination" background layout="prev, pager, next" :current-page="1"
-                    :page-size="pageSize" :total="list.length">
-                </el-pagination>
-
+                <section class="section mt-40" v-else>
+                    <h1>该模块正在努力开发中...</h1>
+                </section>
+                <div v-show = "renderList.length != 0">
+                    <el-pagination  class="pagination" background layout="prev, pager, next" :current-page="page"
+                        :page-size="pageSize" :total="pagination.length" @current-change="currentChange">
+                    </el-pagination>
+                </div>
             </div>
-
         </main>
         <footer class="footer mt-45">
             <FootInfo></FootInfo>
@@ -53,6 +56,7 @@ export default {
         FootInfo,
         HeaderCom,
         TabsList,
+        
     },
     data() {
         return {
@@ -65,56 +69,56 @@ export default {
                     {
                         id: 1,
                         url: require('@/assets/image/officialwebsite-1.png'),
-                        title: '点餐小程序原型',
+                        title: '1',
                         views: '1303',
                         typeInfo: '官网'
                     },
                     {
                         id: 2,
                         url: require('@/assets/image/officialwebsite-2.png'),
-                        title: '电影演出票务原型',
+                        title: '2',
                         views: '617',
                         typeInfo: '官网'
                     },
                     {
                         id: 3,
                         url: require('@/assets/image/officialwebsite-3.png'),
-                        title: '租房原型',
+                        title: '3',
                         views: '443',
                         typeInfo: '官网'
                     },
                     {
                         id: 4,
                         url: require('@/assets/image/officialwebsite-4.png'),
-                        title: '二手车交易原型',
+                        title: '4',
                         views: '341',
                         typeInfo: '官网'
                     },
                     {
                         id: 5,
                         url: require('@/assets/image/officialwebsite-5.png'),
-                        title: '二手车交易原型',
+                        title: '5',
                         views: '341',
                         typeInfo: '官网'
                     },
                     {
                         id: 6,
                         url: require('@/assets/image/officialwebsite-6.png'),
-                        title: '租房原型',
+                        title: '6',
                         views: '443',
                         typeInfo: '官网'
                     },
                     {
                         id: 7,
                         url: require('@/assets/image/officialwebsite-7.png'),
-                        title: '电影演出票务原型',
+                        title: '7',
                         views: '617',
                         typeInfo: '官网'
                     },
                     {
                         id: 8,
                         url: require('@/assets/image/officialwebsite-8.png'),
-                        title: '点餐小程序原型',
+                        title: '8',
                         views: '1303',
                         typeInfo: '官网'
                     },
@@ -124,72 +128,49 @@ export default {
                 id: 2,
                 title: '官网',
                 active: false,
-                childern: [
-                    {
-                        id: 21,
-                        url: require('@/assets/image/template_1.png'),
-                        title: '官网',
-                        views: '1303',
-                        typeInfo: '官网'
-                    },
-                ]
+                childern: []
             },
             {
                 id: 3,
                 title: '后台',
                 active: false,
-                childern: [
-                    {
-                        id: 21,
-                        url: require('@/assets/image/template_1.png'),
-                        title: '后台',
-                        views: '1303',
-                        typeInfo: '官网'
-                    },
-                ]
+                childern: []
             },
             {
                 id: 4,
                 title: 'APP',
                 active: false,
-                childern: [
-                    {
-                        id: 21,
-                        url: require('@/assets/image/template_1.png'),
-                        title: 'APP',
-                        views: '1303',
-                        typeInfo: '官网'
-                    },
-                ]
+                childern: []
             },
             {
                 id: 5,
                 title: '小程序',
                 active: false,
-                childern: [
-                    {
-                        id: 21,
-                        url: require('@/assets/image/template_1.png'),
-                        title: '小程序',
-                        views: '1303',
-                        typeInfo: '官网'
-                    },
-                ]
+                childern: []
             }],
             pageSize: 6,
             renderList: [],
+            page:1,
+            pagination:[],
         }
     },
     created() {
-        this.renderList = this.list[0].childern
+        this.pagination = this.list[0].childern;
+        // console.log(this.renderList.length)
     },
     mounted() {
-        this.renderList = this.list.slice(0, this.pageSize);
+        this.getRenderList(0,this.pageSize);
     },
     methods: {
         getList(val) {
             this.renderList = val;
-            console.log('父', val)
+        },
+        currentChange(currentChange){
+            console.log(currentChange);
+            this.getRenderList(this.pageSize*(currentChange-1),this.pageSize*currentChange);
+        },
+        getRenderList(start,end){
+            this.renderList = this.pagination.slice(start, end);
         }
     }
 
@@ -253,7 +234,7 @@ export default {
 
 
 .main .section {
-    min-height: 316px;
+    min-height: 370px;
     display: flex;
     flex-wrap: wrap;
     row-gap: 20px;
@@ -264,8 +245,8 @@ export default {
 .main .pagination {
     text-align: center;
 }
-
+/* 
 .footer {
     height: 56px;
-}
+} */
 </style>
