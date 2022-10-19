@@ -184,50 +184,18 @@
     <!-- 查找软件开发任务 find-dev-task -->
     <div class="dev-task-wrap">
       <div class="dev-task wrap">
-        <p class="title text-center">我要找靠谱的软件开发任务</p>
-        <p class="desc text-center fs-16 c-bababa">找任务，找更多任务，快速找更多任务</p>
+        <p class="title text-center">我们的业务范围</p>
         <div class="dev-task-list mt-50">
-          <div class="dev-task-item shadow">
-            <img src="~/assets/image/app.png">
-            <p class="text-center fs-18">APP开发</p>
+          <div class="dev-task-item shadow" v-for="item in businessList" :key="item.id">
+            <img :src="item.img">
+            <p class="text-center fs-18">{{item.label}}</p>
           </div>
-          <div class="dev-task-item shadow">
-            <img src="~/assets/image/app.png">
-            <p class="text-center fs-18">小程序开发</p>
-          </div>
-          <div class="dev-task-item shadow">
-            <img src="~/assets/image/app.png">
-            <p class="text-center fs-18">Web网站开发</p>
-          </div>
-          <div class="dev-task-item shadow">
-            <img src="~/assets/image/app.png">
-            <p class="text-center fs-18">前端开发</p>
-          </div>
-          <div class="dev-task-item shadow">
-            <img src="~/assets/image/app.png">
-            <p class="text-center fs-18">后端开发</p>
-          </div>
-          <div class="dev-task-item shadow">
-            <img src="~/assets/image/app.png">
-            <p class="text-center fs-18">产品原型设计</p>
-          </div>
-          <div class="dev-task-item shadow">
-            <img src="~/assets/image/app.png">
-            <p class="text-center fs-18">软件测试</p>
-          </div>
-          <div class="dev-task-item shadow">
-            <img src="~/assets/image/app.png">
-            <p class="text-center fs-18">UI设计</p>
-          </div>
-        </div>
-        <div class="btn-wrap mt-30">
-          <div class="large-btn them-light fs-18">全部任务</div>
         </div>
       </div>
     </div>
 
     <!-- 任务说明 -->
-    <div class="task-des-wrap">
+    <div class="task-des-wrap" v-if="false">
       <div class="wrap task-desc">
         <div class="task-desc-left">
           <p class="title">我要找任务还需了解</p>
@@ -309,19 +277,19 @@
         <div class="about-info">
           <div class="about-info-left">
             <div class="about-info-list fs-16">
-              <div class="about-info-item">关于码市</div>
+              <div class="about-info-item">关于码s</div>
               <div class="about-info-item">帮助</div>
               <div class="about-info-item">联系方式</div>
             </div>
             <div class="about-info-list fs-14 c-bababa">
-              <div class="about-info-item">码市介绍</div>
+              <div class="about-info-item">码s介绍</div>
               <div class="about-info-item">如何发布项目需求?</div>
-              <div class="about-info-item">0755-33940</div>
+              <div class="about-info-item">fsdaopjf</div>
             </div>
             <div class="about-info-list fs-14 c-bababa">
-              <div class="about-info-item">码市案例</div>
+              <div class="about-info-item">码s案例</div>
               <div class="about-info-item">如何为发布的项目需求定价?</div>
-              <div class="about-info-item">support @ codemart.com</div>
+              <div class="about-info-item">2014873253@qq.com</div>
             </div>
             <div class="about-info-list fs-14 c-bababa">
               <div class="about-info-item">内容中心</div>
@@ -330,13 +298,13 @@
             </div>
           </div>
           <div class="about-info-right text-right">
-            <img src="~/assets/image/logo.png">
+            <img src="~/assets/image/logo1.png">
           </div>
         </div>
       </div>
 
       <!-- 版本号 -->
-      <div class="copy-wrap text-center wrap fs-12">
+      <div class="copy-wrap text-center wrap fs-12" v-if="false">
         Copyright © 2014-2022 深圳市英选码市科技有限公司 版权所有 备案号：粤ICP备18032316号-1
       </div>
     </div>
@@ -384,12 +352,55 @@ import HeaderCom from '~/components/HeaderCom.vue';
       bool:false
     },
   ]
+  const businessList = [
+    {
+      id:1,
+      img:require('~/assets/image/app.png'),
+      label:'APP开发',
+    },
+    {
+      id:2,
+      img:require('~/assets/image/app.png'),
+      label:'小程序开发',
+    },
+    {
+      id:3,
+      img:require('~/assets/image/app.png'),
+      label:'Web网站开发',
+    },
+    {
+      id:4,
+      img:require('~/assets/image/app.png'),
+      label:'前端开发',
+    },
+    {
+      id:5,
+      img:require('~/assets/image/app.png'),
+      label:'后端开发',
+    },
+    {
+      id:6,
+      img:require('~/assets/image/app.png'),
+      label:'产品原型设计',
+    },
+    {
+      id:7,
+      img:require('~/assets/image/app.png'),
+      label:'软件测试',
+    },
+    {
+      id:8,
+      img:require('~/assets/image/app.png'),
+      label:'UI设计',
+    },
+  ]
 export default {
     name: "IndexPage",
     data() {
         return {
             knowList,
             index: 1,
+            businessList,
         };
     },
     methods: {
