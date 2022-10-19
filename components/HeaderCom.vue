@@ -9,7 +9,7 @@
                     <a>找项目</a>
                 </div>
                 <div class="nav-item">
-                    <a> 模板广场</a>
+                    <a href="/square/SquareIndex"> 模板广场</a>
                     <svg class="new-tip" xmlns="http://www.w3.org/2000/svg" width="36" height="14" viewBox="0 0 36 14">
                         <g fill="none">
                             <rect width="36" height="14" fill="#F75288" rx="2"></rect>
@@ -26,8 +26,8 @@
         </div>
         <div class="header-r">
             <div class="btns">
-                <div class="btn"><a href="/loginPage/loginPage">登录</a></div>
-                <div class="btn">注册</div>
+                <div class="btn"><a href="/login/LoginPage">登录</a></div>
+                <div class="btn"><a href="/register/RegisterPage">注册</a></div>
                 <div class="btn btn-border">发布项目</div>
             </div>
         </div>
@@ -105,11 +105,12 @@ header {
     display: inline-block;
     padding: 10px 15px;
     border-radius: 5px;
+    border: 1px solid transparent;
     margin: 0 5px;
 }
 
-.btns .btn a {
-    color: #fff;
+a {
+    color: v-bind(fontColor);
 }
 
 .btn-border {

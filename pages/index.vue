@@ -30,9 +30,7 @@
             </div>
           </div>
           <div class="banner-wrap">
-            <img
-              src="https://656e-env-iknzbddq-1254055692.tcb.qcloud.la/cloudbase-cms/upload/2021-12-02/b96c4m4uqlkvtkgcaitxc8t22036wwhb_.png"
-              alt="">
+            <img class="banner-img" src="~/assets/image/haoshuang.png" alt="">
           </div>
         </div>
 
@@ -46,7 +44,7 @@
             <a class="start-button fs-14 mt-30">了解详情</a>
           </div>
           <div class="banner-wrap">
-            <img src="https://codemart.com/images/index/banner-project.png" alt="">
+            <img src="~/assets/image/banner-2.png" alt="">
           </div>
         </div>
 
@@ -79,7 +77,7 @@
     <div class="development-option-wrap wrap">
 
       <!-- 标题 -->
-      <p class="development-option-tit mb-20">我要找专业的软件开发成员</p>
+      <p class="development-option-tit mb-20">我们的开发人员</p>
       
       <!-- 列表 -->
       <div class="development-option-list">
@@ -138,7 +136,7 @@
             <div class="large-btn them-light fs-18">了解整包服务</div>
           </div>
           <div class="cm-info-right">
-            <img src="https://assets.codemart.com/images/index/service.png">
+            <img src="~/assets/image/server.png">
           </div>
         </div>
     </div>
@@ -146,7 +144,7 @@
     <!-- 为什么选择 -->
     <div class="why-check-wrap">
       <div class="wrap why-check">
-          <p class="title text-center">我为什么选择码市</p>
+          <p class="title text-center">我为什么选择</p>
           <div class="why-check-list">
             <div class="why-check-item">
                 <img src="~/assets/image/icon-large.png">
@@ -174,9 +172,9 @@
             <img src="~/assets/image/banner-find.png">
           </div>
           <div class="begin-right">
-            <p class="title">开始寻找你的外包人才</p>
-            <p class="desc c-bababa fs-16 mt-15">在码市用同样的价格找到更优的人才，用同样的时间连接更多候选人，在码市寻找项目外包人才，快人一步。</p>
-            <div class="large-btn them-light fs-18 mt-30">我要找人才</div>
+            <p class="title">完成您的需求</p>
+            <p class="desc c-bababa fs-16 mt-15">快人一步,高效实现。</p>
+            <div class="large-btn them-light fs-18 mt-30">发布需求</div>
           </div>
         </div>
     </div>
@@ -922,5 +920,9 @@ export default {
 
 .detail-item-right .desc{
   line-height: 200%;
+}
+
+.banner-img{
+  width: 100%;
 }
 </style>
