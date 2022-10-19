@@ -227,8 +227,8 @@
     <!--为什么选择码s  -->
     <div class="check-us-wrap">
       <div class="check-us wrap">
-        <p class="title text-center">他们为什么选择码市</p>
-        <p class="desc text-center fs-16 c-bababa mt-10">我们的需求方在码市平台体验高效精准的人才匹配服务，开发者体验更便捷的接单服务。</p>
+        <p class="title text-center">他们为什么选择码s</p>
+        <p class="desc text-center fs-16 c-bababa mt-10">我们的需求方在码s平台体验高效精准的人才匹配服务，保证后续的代码维护。</p>
 
         <!-- 轮播图 -->
         <div class="check-us-detail mt-50">
@@ -240,9 +240,9 @@
                 <div class="detail-item-right">
                   <div>
                     <img src="~/assets/image/semi.png">
-                    <p class="desc"> “我们从码市创办之初就在码市提供服务了，现在全码市也名列第五咯，码市上的项目相比其他平台会更容易消化，因为大部分的需求方都比较专业，能说清楚自己的要求，也了解软件开发过程，甚至有的专业需求方能自己提供流程图脑图等资料，就很不错。”</p>
+                    <p class="desc"> "我们提供高效迅速的开发服务，保证用户在短时间内，能够获得项目。可以保证后续的代码维护服务。拥有良好的开发态度，成员认真负责。"</p>
                   </div>
-                  <p class="from">赵瀚卿·“零云”产品负责人</p>
+                  <p class="from">乌拉拉项目组</p>
                 </div>
               </div>
             </div>
@@ -474,14 +474,20 @@ export default {
 }
 
 .check-active {
-  width: 42px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   background: #3388e9;
 }
 
+.check-active,.check-un:hover{
+  cursor: pointer;
+}
+
 .check-un {
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   background: #fff;
 }
 
