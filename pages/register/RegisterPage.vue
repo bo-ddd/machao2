@@ -1,6 +1,6 @@
 <template>
     <div class="registe-page">
-        <NavCom toUrl="index" logoUrl="https://assets.codemart.com/scripts/97b8f071e76549f45dfbe527295955ba.png">
+        <NavCom toUrl="index" :logoUrl="require('@/assets/image/logo1.png')">
             <template #left-text>
                 互联网软件外包服务平台
             </template>
