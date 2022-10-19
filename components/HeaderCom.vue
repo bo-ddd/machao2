@@ -6,9 +6,6 @@
             </nuxt-link>
             <div class="nav-list">
                 <div class="nav-item">
-                    <a>找项目</a>
-                </div>
-                <div class="nav-item">
                     <a href="/square/SquareIndex"> 模板广场</a>
                     <svg class="new-tip" xmlns="http://www.w3.org/2000/svg" width="36" height="14" viewBox="0 0 36 14">
                         <g fill="none">
