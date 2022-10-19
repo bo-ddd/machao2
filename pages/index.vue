@@ -5,22 +5,22 @@
       <!-- <img src="~/assets/image/LOGO2.png" alt=""> -->
       <HeaderCom class="mt-10 padding-15_28" :logo="require('~/assets/image/LOGO2.png')"></HeaderCom>
       <!-- 头部窄屏 -->
-      <header class="header-min">
+      <!-- <header class="header-min">
         <nuxt-link to="/">
             <img class="logo" src="https://codemart.com/images/mart-logo-white.png" alt="logo">
         </nuxt-link>
         <img src="~/assets/image/icon-list.png">
-      </header>
+      </header> -->
 
       <!-- banner -->
       <div class="view-box">
 
         <!-- 显示第一个banner -->
-        <div class="view-one" v-show="index === 1">
+        <div class="view-one wrap" v-show="index === 1">
           <div class="index-top">
             <div class="top-motto-container">
               <p class="top-motto">
-                互联网软件外包服务平台
+                软件服务平台
               </p>
             </div>
             <div class="btm-motto-container mt-10">
@@ -29,14 +29,12 @@
               </p>
             </div>
           </div>
-          <div class="banner-wrap">
-            <img
-              src="https://656e-env-iknzbddq-1254055692.tcb.qcloud.la/cloudbase-cms/upload/2021-12-02/b96c4m4uqlkvtkgcaitxc8t22036wwhb_.png"
-              alt="">
-          </div>
+          <!-- <div class="banner-wrap">
+            <img class="banner-img" src="~/assets/image/haoshuang.png" alt="">
+          </div> -->
         </div>
 
-        <div class="view-two" v-show="index === 2">
+        <div class="view-two wrap" v-show="index === 2">
           <div class="index-top">
             <div class="top-motto-container">
               新版阶段划分
@@ -45,9 +43,9 @@
             </div>
             <a class="start-button fs-14 mt-30">了解详情</a>
           </div>
-          <div class="banner-wrap">
-            <img src="https://codemart.com/images/index/banner-project.png" alt="">
-          </div>
+          <!-- <div class="banner-wrap">
+            <img src="~/assets/image/banner-2.png" alt="">
+          </div> -->
         </div>
 
         <!-- 切换banner -->
@@ -58,7 +56,7 @@
     </div>
 
     <!-- 项目信息 -->
-    <div class="cm-nums-out">
+    <!-- <div class="cm-nums-out">
       <div class="wrap cm-nums">
         <div class="cm-num-box">
           <div class="cm-countup">548,310,503</div>
@@ -73,13 +71,13 @@
           <div class="cm-num-desc">注册开发者</div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- 功能选项 -->
     <div class="development-option-wrap wrap">
 
       <!-- 标题 -->
-      <p class="development-option-tit mb-20">我要找专业的软件开发成员</p>
+      <p class="development-option-tit mb-20">我们的开发人员</p>
       
       <!-- 列表 -->
       <div class="development-option-list">
@@ -116,7 +114,7 @@
         <div class="cm-info-wrap wrap">
           <div class="cm-info-left">
             <p class="title">我要找全面的软件开发服务</p>
-            <p class="desc c-bababa fs-16">想要更棒的项目协作体验,更高的交付质量,更全面的服务保障吗?试试"英选-码市"软件定制整包服务</p>
+            <p class="desc c-bababa fs-16">想要更棒的项目,更高的交付质量,更全面的服务保障吗?那就选择"码s"</p>
             <div class="detail-list mt-50">
               <div class="detail-item">
                 <img class="icon-small" src="~/assets/image/icon-info.png">
@@ -138,7 +136,7 @@
             <div class="large-btn them-light fs-18">了解整包服务</div>
           </div>
           <div class="cm-info-right">
-            <img src="https://assets.codemart.com/images/index/service.png">
+            <img src="~/assets/image/server.png" class="banner-radius">
           </div>
         </div>
     </div>
@@ -146,7 +144,7 @@
     <!-- 为什么选择 -->
     <div class="why-check-wrap">
       <div class="wrap why-check">
-          <p class="title text-center">我为什么选择码市</p>
+          <p class="title text-center">我为什么选择</p>
           <div class="why-check-list">
             <div class="why-check-item">
                 <img src="~/assets/image/icon-large.png">
@@ -170,13 +168,14 @@
     <!-- 开始寻找人才 -->
     <div class="begin-wrap">
         <div class="wrap begin">
-          <div class="begin-left">
-            <img src="~/assets/image/banner-find.png">
-          </div>
+          
           <div class="begin-right">
-            <p class="title">开始寻找你的外包人才</p>
-            <p class="desc c-bababa fs-16 mt-15">在码市用同样的价格找到更优的人才，用同样的时间连接更多候选人，在码市寻找项目外包人才，快人一步。</p>
-            <div class="large-btn them-light fs-18 mt-30">我要找人才</div>
+            <p class="title">高效完成您的需求</p>
+            <p class="desc c-bababa fs-16 mt-15">快人一步,高效实现。</p>
+            <div class="large-btn them-light fs-18 mt-30">发布需求</div>
+          </div>
+          <div class="begin-left">
+            <img src="~/assets/image/banner-find.png" class="banner-radius">
           </div>
         </div>
     </div>
@@ -184,10 +183,12 @@
     <!-- 查找软件开发任务 find-dev-task -->
     <div class="dev-task-wrap">
       <div class="dev-task wrap">
-        <p class="title text-center">我们的业务范围</p>
+        <p class="title text-center">业务范围</p>.
         <div class="dev-task-list mt-50">
           <div class="dev-task-item shadow" v-for="item in businessList" :key="item.id">
-            <img :src="item.img">
+            <div class="task-item-img">
+              <img :src="item.img">
+            </div>
             <p class="text-center fs-18">{{item.label}}</p>
           </div>
         </div>
@@ -222,20 +223,8 @@
     </div>
 
     <!-- 开启自由之路 -->
-    <div class="free-way-wrap">
-      <div class="free-way wrap">
-        <div class="free-way-left">
-          <p class="title cl-fff">开启你的自由职业之路</p>
-          <p class="desc cl-fff mt-20 fs-16">发挥擅长技能，弹性安排工作时间，在任何地方工作，灵活选择全职或兼职，拓宽专业技能，发展兴趣爱好......最重要的是还能赚钱，来码市，帮你实现。</p>
-          <div class="large-btn them-light fs-18 mt-30">开启自由职业之路</div>
-        </div>
-        <div class="free-way-right">
-          <img src="~/assets/image/free.png">
-        </div>
-      </div>
-    </div>
 
-    <!--为什么选择码市  -->
+    <!--为什么选择码s  -->
     <div class="check-us-wrap">
       <div class="check-us wrap">
         <p class="title text-center">他们为什么选择码市</p>
@@ -264,9 +253,9 @@
     <!-- 加入我们 -->
     <div class="join-us-wrap">
       <div class="join-us wrap">
-        <p class="title text-center fs-46 cl-fff">来码市，找人才/任务快人一步</p>
+        <p class="title text-center fs-46 cl-fff">请加入码s</p>
         <div class="btn-wrap mt-50">
-          <div class="large-btn them-low fs-18">加入码市</div>
+          <div class="large-btn them-low fs-18">加入码s</div>
         </div>
       </div>
     </div>
@@ -284,12 +273,12 @@
             <div class="about-info-list fs-14 c-bababa">
               <div class="about-info-item">码s介绍</div>
               <div class="about-info-item">如何发布项目需求?</div>
-              <div class="about-info-item">fsdaopjf</div>
+              <div class="about-info-item">15836153616</div>
             </div>
             <div class="about-info-list fs-14 c-bababa">
               <div class="about-info-item">码s案例</div>
               <div class="about-info-item">如何为发布的项目需求定价?</div>
-              <div class="about-info-item">2014873253@qq.com</div>
+              <div class="about-info-item">814151789@qq.com</div>
             </div>
             <div class="about-info-list fs-14 c-bababa">
               <div class="about-info-item">内容中心</div>
@@ -355,42 +344,42 @@ import HeaderCom from '~/components/HeaderCom.vue';
   const businessList = [
     {
       id:1,
-      img:require('~/assets/image/app.png'),
+      img:require('~/assets/image/icon-app.png'),
       label:'APP开发',
     },
     {
       id:2,
-      img:require('~/assets/image/app.png'),
+      img:require('~/assets/image/icon-program.png'),
       label:'小程序开发',
     },
     {
       id:3,
-      img:require('~/assets/image/app.png'),
+      img:require('~/assets/image/icon-web.png'),
       label:'Web网站开发',
     },
     {
       id:4,
-      img:require('~/assets/image/app.png'),
+      img:require('~/assets/image/icon-html5.png'),
       label:'前端开发',
     },
     {
       id:5,
-      img:require('~/assets/image/app.png'),
+      img:require('~/assets/image/icon-lb.png'),
       label:'后端开发',
     },
     {
       id:6,
-      img:require('~/assets/image/app.png'),
+      img:require('~/assets/image/icon-product.png'),
       label:'产品原型设计',
     },
     {
       id:7,
-      img:require('~/assets/image/app.png'),
+      img:require('~/assets/image/icon-test.png'),
       label:'软件测试',
     },
     {
       id:8,
-      img:require('~/assets/image/app.png'),
+      img:require('~/assets/image/icon-ui-cn.png'),
       label:'UI设计',
     },
   ]
@@ -415,7 +404,7 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (max-width:1000px) {
+/* @media screen and (max-width:1000px) {
   .header-max {
     display: none;
   }
@@ -425,7 +414,7 @@ export default {
   .header-min {
     display: none;
   }
-}
+} */
 
 .padding-15_28{
   padding: 15px 28px;
@@ -460,15 +449,15 @@ export default {
 }
 
 .view-one {
-  display: grid;
-  grid-template-columns: auto 1fr;
   padding: 91px 0;
+  background: url('~/assets/image/haoshuang.png');
+  background-size: 100% 100%;
 }
 
 .view-two {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 91px 0;
+  background: url('~/assets/image/banner-2.png');
+  background-size: 100% 100%;
 }
 
 .view-two,.view-one{
@@ -805,28 +794,16 @@ export default {
   cursor: pointer;
 }
 
-.free-way-wrap{
-  background: #28384E;
-}
 
-.free-way{
-  padding: 100px 0;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap:0 100px;
-}
 
 .cl-fff{
   color: #fff;
 }
 
-.free-way .free-way-left .desc{
-  line-height: 200%;
+.banner-radius{
+  border-radius: 5px;
 }
 
-.free-way .free-way-left{
-  padding: 60px 0;
-}
 
 .join-us-wrap{
   background: url("~/assets/image/bg.png");
@@ -922,5 +899,19 @@ export default {
 
 .detail-item-right .desc{
   line-height: 200%;
+}
+
+.banner-img{
+  width: 100%;
+}
+
+.task-item-img{
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.task-item-img img{
+  width: 64px;
 }
 </style>

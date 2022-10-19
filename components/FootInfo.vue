@@ -52,7 +52,7 @@
 
 .foot {
     width: 100%;
-
+    height: 20px;
     padding: 17.5px 0;
     background-color: v-bind(backColor);
 }
