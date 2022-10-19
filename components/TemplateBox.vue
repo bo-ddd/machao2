@@ -1,7 +1,7 @@
 
 <template>
     <div class="container">
-        <img :src="src" alt="">
+        <img class="icon" :src="src" alt="">
         <div class="info">
             <p class="title fs-14">{{title}}</p>
             <div class=" align-center mt-10 ">
@@ -38,7 +38,6 @@ export default {
     },
 
     mounted() {
-        console.log(this.src);
 
     },
 
@@ -68,5 +67,13 @@ export default {
 
 .info {
     padding: 15px 10px;
+}
+.title{
+    line-height: 12px;
+}
+.icon{
+    --size:365px;
+    width: var(--size);
+    height: var(--size);
 }
 </style>
