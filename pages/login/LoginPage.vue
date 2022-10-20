@@ -24,7 +24,7 @@
                 <div class="con-title mt-40 mb-14">账号密码登录</div>
                 <TipInput class="mt-15 mb-8" v-model="userAccount" :tipFlag="accountFlag" placeholder="手机号 / 用户名 / 电子邮箱" tipText="请输入账号"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput class="mt-15 mb-8" v-model="passWord" :tipFlag="passwordFlag" placeholder="请输入密码" tipText="请输入密码"
+                <TipInput class="mt-15 mb-8" v-model="passWord" :tipFlag="passwordFlag" placeholder="请输入密码" tipText="请输入密码" type="password"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
                 <div class="just-between fs-14">
                     <div class="cur-point align-center">

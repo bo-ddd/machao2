@@ -1,11 +1,15 @@
 <template>
-    <button class="sub-btn">
+    <button class="sub-btn" @click="click">
         <slot></slot>
     </button>
 </template>
 <script>
 export default{
-    
+    methods:{
+        click(){
+            this.$emit('btnClick')
+        }
+    }
 }
 </script>
 

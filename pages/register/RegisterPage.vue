@@ -26,15 +26,15 @@
             </OptionBox>
             </div> -->
             <div>
-                <TipInput class="mt-15 mb-8" v-model="userName" placeholder="用户名 (即个性后缀，注册后无法修改)" tipText="请输入用户名"
+                <TipInput class="mt-15 mb-8" v-model="form.username" placeholder="用户名 (即个性后缀，注册后无法修改)" tipText="请输入用户名"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <PhoneInput class="mt-15 mb-8" v-model="phoneNum" placeholder="手机号" tipText="请输入手机号"
-                    :errorImg="require('@/assets/image/icon-error.png')"></PhoneInput>
-                <TipInput class="mt-15 mb-8" v-model="phoneCode" placeholder="请输入手机验证码" tipText="请输入手机验证码"
+                <!-- <PhoneInput class="mt-15 mb-8" v-model="form.phoneNum" placeholder="手机号" tipText="请输入手机号"
+                    :errorImg="require('@/assets/image/icon-error.png')"></PhoneInput> -->
+                <TipInput class="mt-15 mb-8" v-model="form.avatarName" placeholder="请输入昵称" tipText="请输入昵称" 
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput class="mt-15 mb-8" v-model="passWord" placeholder="请输入密码" tipText="请输入密码"
+                <TipInput class="mt-15 mb-8" v-model="form.phoneNumber" placeholder="请输入手机号" tipText="请输入手机号"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput class="mt-15 mb-8" v-model="againPassWord" placeholder="请确认密码" tipText="请确认密码"
+                <TipInput class="mt-15 mb-8" v-model="form.password" placeholder="请输入密码" tipText="请输入密码"  type="password"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
 
                 <div class="con-check">
@@ -45,7 +45,7 @@
                     </nuxt-link>
                 </div>
 
-                    <SubmitButton class="mt-15">注册</SubmitButton>
+                    <SubmitButton class="mt-15" @btnClick="register">注册</SubmitButton>
             </div>
             </div>
         </div>
@@ -53,15 +53,16 @@
     </div>
 </template>
 <script>
+import {registerApi} from '@/api/api.js'
 export default {
     data() {
         return {
-            userName: "",
-            phoneNum:'',
-            phoneCode: "",
-            passWord: "",
-            againPassWord: "",
-            userStatus:""
+            form:{
+            username: "",
+            avatarName:'',
+            phoneNumber: "",
+            password: "",
+            }
         };
     },
     methods:{
@@ -69,6 +70,30 @@ export default {
             console.log(status);
             this.userStatus=status;
             console.log(this.userStatus);
+        },
+        register(){
+            console.log(88);
+            console.log(this.form);
+            registerApi(this.form).then(res=>{
+                console.log(1);
+                console.log(res);
+                if(res.data.status==1){
+                    this.$message.success({
+                     message: '注册成功,'+res.data.msg,
+                })
+                }else{
+                    this.$message.warning({
+                     message: '注册失败,'+res.data.msg,
+                })
+                }
+                
+            }).catch(err=>{
+                console.log(err);
+                console.log(88448);
+                this.$message.warning({
+                     message: '注册失败',
+                })
+            })
         }
     },
     computed:{
