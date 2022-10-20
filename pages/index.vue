@@ -25,7 +25,7 @@
             </div>
             <div class="btm-motto-container mt-10">
               <p class="btm-motto">
-                提供您所需的全套软件开发服务
+                码s是致力于帮助用户开发网站和软件的一个平台。
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@
         <div class="view-two wrap" v-show="index === 2">
           <div class="index-top">
             <div class="top-motto-container">
-              新版阶段划分
+              我们目前主要帮助用户搭建官网。
               <br>
               自助验收,轻松交付
             </div>
@@ -227,7 +227,7 @@
     <!--为什么选择码s  -->
     <div class="check-us-wrap">
       <div class="check-us wrap">
-        <p class="title text-center">他们为什么选择码s</p>
+        <p class="title text-center">为什么选择码s</p>
         <p class="desc text-center fs-16 c-bababa mt-10">我们的需求方在码s平台体验高效精准的人才匹配服务，保证后续的代码维护。</p>
 
         <!-- 轮播图 -->
@@ -235,7 +235,7 @@
             <div class="detail-container shadow">
               <div class="detail-item">
                 <div class="detail-item-left">
-                  <img src="https://assets.codemart.com/images/index/avatar/zhq.png">
+                  <img src="~/assets/image/banner-index.png">
                 </div>
                 <div class="detail-item-right">
                   <div>
@@ -359,28 +359,8 @@ import HeaderCom from '~/components/HeaderCom.vue';
     },
     {
       id:4,
-      img:require('~/assets/image/icon-html5.png'),
-      label:'前端开发',
-    },
-    {
-      id:5,
-      img:require('~/assets/image/icon-lb.png'),
-      label:'后端开发',
-    },
-    {
-      id:6,
-      img:require('~/assets/image/icon-product.png'),
-      label:'产品原型设计',
-    },
-    {
-      id:7,
-      img:require('~/assets/image/icon-test.png'),
-      label:'软件测试',
-    },
-    {
-      id:8,
-      img:require('~/assets/image/icon-ui-cn.png'),
-      label:'UI设计',
+      img:require('~/assets/image/icon-gz.png'),
+      label:'公众号开发',
     },
   ]
 export default {
