@@ -20,7 +20,12 @@ const instance = axios.create({
 export const registerApi = function (payload = {}) {
     return instance.post('/user/register', payload)
 }
-/** */
+/**
+ * @description 注册接口
+ * @param payload object
+ * @param payload.username String 用户名，6-20位之间
+ * @param payload.password String 密码，6-20位之间
+ */
 export const loginApi = function (payload = {}) {
     return instance.post('/user/login', payload)
 }

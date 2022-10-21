@@ -72,12 +72,10 @@ export default {
             console.log(this.userStatus);
         },
         register(){
-            console.log(88);
-            console.log(this.form);
             registerApi(this.form).then(res=>{
                 console.log(1);
                 console.log(res);
-                if(res.data.status==1){
+                if(res.data.status===1){
                     this.$message.success({
                      message: '注册成功,'+res.data.msg,
                 })
