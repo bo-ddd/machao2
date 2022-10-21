@@ -53,7 +53,7 @@
     </div>
 </template>
 <script>
-import {registerApi} from '@/api/api.js'
+import {registerApi,loginApi} from '@/api/api.js'
 export default {
     data() {
         return {
@@ -65,33 +65,49 @@ export default {
             }
         };
     },
+    mounted(){
+// console.log(this.$router.push('/'));
+    },
     methods:{
         updateOp(status){
             console.log(status);
             this.userStatus=status;
             console.log(this.userStatus);
         },
-        register(){
-            registerApi(this.form).then(res=>{
-                console.log(1);
-                console.log(res);
-                if(res.data.status===1){
-                    this.$message.success({
-                     message: '注册成功,'+res.data.msg,
-                })
-                }else{
-                    this.$message.warning({
-                     message: '注册失败,'+res.data.msg,
-                })
-                }
-                
-            }).catch(err=>{
-                console.log(err);
-                console.log(88448);
+        async register(){
+            let {username,password}=this.form;
+            let registerRes=await registerApi(this.form);
+            if(registerRes.data.status===1){
+                this.$message.success({
+                     message: '注册成功,正在为你登录'+registerRes.data.msg,
+                });
+            let loginRes=await loginApi({
+               username,password
+            });
+            console.log(loginRes);
+            if(loginRes.data.status===1){
+                // this.$message.success({
+                //     message: '登录成功,准备跳转'+loginRes.data.msg,
+                // });
+                console.log();
+                sessionStorage.setItem('token',loginRes.data.data.token)
+                setTimeout(()=>{
+                    this.to('/')
+                },2000)
+            }else{
                 this.$message.warning({
-                     message: '注册失败',
+                    message: '登录失败,'+loginRes.data.msg,
                 })
-            })
+            }    
+            }else{
+                this.$message.warning({
+                    message: '注册失败,'+registerRes.data.msg,
+                })
+            };
+                
+        },
+        to(routeName){
+            this.$router.push(routeName);
         }
     },
     computed:{

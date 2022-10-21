@@ -65,9 +65,7 @@ class UserController extends App {
         const { res, req } = this.ctx;
         const { username , password } = req.body;
         let data =await res.sql('select * from user where username=? and password=?',[username,password]);
-        console.log('------data------');
-        console.log(data);
-        if(data.data.length){
+        if(data.status==1){
             let resData = data.data[0];
             let token = Jwt.sign(resData);
             res.success({'token':token});

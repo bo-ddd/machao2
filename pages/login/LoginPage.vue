@@ -76,25 +76,25 @@ export default {
                 this.accountFlag = true;
             }
         },
-        login(){
-            loginApi(this.form).then(res=>{
+        async login(){
+            let res=await loginApi(this.form);
+            if(res.data.status===1){
+                this.$message.success({
+                    message: '登录成功,准备跳转'+res.data.msg,
+                })
                 console.log(res);
-                if(res.data.status==+1){
-                    this.$message.success({
-                     message: '登录成功,'+res.data.msg,
-                })
-                }else{
-                    this.$message.warning({
-                     message: '登录失败,'+res.data.msg,
-                })
-                }
-                
-            }).catch(err=>{
-                console.log(err);
+                sessionStorage.setItem('token',res.data.data.token)
+                setTimeout(()=>{
+                    this.to('/')
+                },2000)
+            }else{
                 this.$message.warning({
-                     message: '登录失败',
+                    message: '登录失败,'+res.data.msg,
                 })
-            })
+            }
+        },
+        to(routeName){
+            this.$router.push(routeName);
         }
     },
 }
