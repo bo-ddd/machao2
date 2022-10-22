@@ -50,7 +50,7 @@
 
         <!-- 切换banner -->
         <div class="check-banner">
-          <div :class="[{'check' :index == item},{'check-active':index == item},{'check-un':index != item}]" v-for="item in 2" :key="item" @click="handleChangeBanner(item)"></div>
+          <div :class="['check',{'check-active':index == item},{'check-un':index != item}]" v-for="item in 2" :key="item" @click="handleChangeBanner(item)"></div>
         </div>
       </div>
     </div>
