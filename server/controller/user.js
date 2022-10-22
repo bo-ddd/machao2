@@ -42,13 +42,15 @@ class UserController extends App {
 
             // 添加手机号
             this.connection.query('insert into user_info (phoneNumber) values(?)', [phoneNumber],(error, userInfo)=>{
+                console.log(userInfo);
                 if(error){
                     return this.connection.rollback(res.fail('添加手机号失败'));
                 }
 
-                let userId = userInfo.data.insertId;
+                let userId = userInfo.insertId;
                 // 添加用户名和密码
-                this.connection.query('insert into user (username, password, userId) values(?,?)', [username, password, userId],function(err, data){
+                console.log(username,password, userId)
+                this.connection.query('insert into user (username, password, userId) values(?, ?, ?)', [username, password, userId],(error, data)=>{
                     if(error){
                         return this.connection.rollback(res.fail('添加用户信息失败'))
                     }
@@ -63,7 +65,7 @@ class UserController extends App {
         const { res, req } = this.ctx;
         const { username , password } = req.body;
         let data =await res.sql('select * from user where username=? and password=?',[username,password]);
-        if(data.data.length){
+        if(data.status==1){
             let resData = data.data[0];
             let token = Jwt.sign(resData);
             res.success({'token':token});
