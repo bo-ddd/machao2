@@ -56,7 +56,7 @@ export default {
 
 .container:hover {
     transition: all .3s ease-in-out;
-    box-shadow: 0px 10px 20px #c7c7c7;
+    box-shadow: 0px 0px 10px #c7c7c7;
     transform: translateY(-2px);
 }
 
@@ -71,7 +71,7 @@ export default {
     line-height: 12px;
 }
 .icon{
-    --size:365px;
+    --size:350px;
     width: var(--size);
     height: var(--size);
 }
