@@ -2,40 +2,24 @@
     <div>
         <HeaderCom class="header-com" :background="'#fff'" fontColor="#000" :logo="require('~/assets/image/logo1.png')">
         </HeaderCom>
-        <!-- <header class="header">
-            <div class="container">
-                <div class="container-title align-center">
-                    <h1 class="title mr-10 c-ffffff">码市原型广场</h1>
-                    <span class="text c-ffffff fs-14 mt-10">[码市x墨刀]</span>
-                </div>
-                <div class="input-search align-center">
-                    <el-input v-model="input" placeholder="搜索素材" clearable class="input"></el-input>
-                    <el-button class="borderr-0 button" type="primary">
-                        <h3>搜 索</h3>
-                    </el-button>
-                </div>
-            </div>
-        </header> -->
-        <main>
-            <div class="main square-wrap mt-18">
-                <div class=" list align-center">
-                    <p class="title fs-14 mr-44">平台</p>
-                    <TabsList activeName="all"  :dataList="list" @list="getList"></TabsList>
-                </div>
-                <section class="section mt-40" v-if=" renderList.length != 0 ">
-                    <template-box  v-for="item in renderList" :key="item.id" :src='item.url' :title="item.title"
-                        :views="item.views" :type-info="item.typeInfo">
-                    </template-box>
-                </section>
-                <section class="section mt-40" v-else>
-                    <h1>该模块正在努力开发中...</h1>
-                </section>
-                <div v-show = "renderList.length != 0">
-                    <el-pagination  class="pagination" background layout="prev, pager, next" :current-page="page"
-                        :page-size="pageSize" :total="pagination.length" @current-change="currentChange">
+
+        <div class="square-wrap">
+            <img class="banner" src="~/assets/image/banner-square.png" alt="">
+        </div>
+
+        <main  class="main square-wrap" >
+            <el-tabs class="mt-20" v-model="activeName" @tab-click="handleClick($event)">
+                <el-tab-pane  v-for="item,index in list" :key="index" :label="item.title" :name="item.name">
+                    <div class="template">
+                        <template-box  v-for="child in arr" :key="child.id" :src="child.url" :views="child.views" :title="child.title" :typeInfo="child.typeInfo"></template-box>
+                        <h1 v-show="item.childern.length == 0?true:false">该模块正在努力开发中...</h1>
+                    </div>
+                    <el-pagination v-show="item.childern.length == 0?false:true" class="flex-ja-center mt-40" @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                        :current-page="currentPage"  :page-size="pageSize"
+                        layout="  prev, pager, next, jumper" :total="total">
                     </el-pagination>
-                </div>
-            </div>
+                </el-tab-pane>
+            </el-tabs>
         </main>
         <footer class="footer mt-45">
             <FootInfo></FootInfo>
@@ -44,27 +28,87 @@
 </template>
 
 <script>
-
-import TemplateBox from '@/components/TemplateBox';
-import FootInfo from "@/components/FootInfo.vue";
-import HeaderCom from "@/components/HeaderCom";
-import TabsList from "@/components/TabsList.vue";
+import TemplateBox from '~/components/TemplateBox.vue'
 
 export default {
-    components: {
-        TemplateBox,
-        FootInfo,
-        HeaderCom,
-        TabsList,
-        
-    },
+
     data() {
         return {
-            input: '',
+            activeName:'1',
+            // succes: "1",
+            currentPage:1,
+            pageSize:6,
+            renderList:[],
+            arr:[],
+            start:0,
+            total:0,
             list: [{
                 id: 1,
                 title: '全部',
-                active: true,
+                name: "1",
+                childern: [
+                    {
+                        id: 1,
+                        url: require('@/assets/image/officialwebsite-1.png'),
+                        title: 'B端设计',
+                        views: '1303',
+                        typeInfo: '官网'
+                    },
+                    {
+                        id: 2,
+                        url: require('@/assets/image/officialwebsite-2.png'),
+                        title: 'B端产品官网',
+                        views: '617',
+                        typeInfo: '官网'
+                    },
+                    {
+                        id: 3,
+                        url: require('@/assets/image/officialwebsite-3.png'),
+                        title: '官网模型',
+                        views: '443',
+                        typeInfo: '官网'
+                    },
+                    {
+                        id: 4,
+                        url: require('@/assets/image/officialwebsite-4.png'),
+                        title: 'WEB B端',
+                        views: '341',
+                        typeInfo: '官网'
+                    },
+                    {
+                        id: 5,
+                        url: require('@/assets/image/officialwebsite-5.png'),
+                        title: 'B端官网',
+                        views: '341',
+                        typeInfo: '官网'
+                    },
+                    {
+                        id: 6,
+                        url: require('@/assets/image/officialwebsite-6.png'),
+                        title: 'WEB 企业官网',
+                        views: '443',
+                        typeInfo: '官网'
+                    },
+                    {
+                        id: 7,
+                        url: require('@/assets/image/officialwebsite-7.png'),
+                        title: '移动端',
+                        views: '617',
+                        typeInfo: '官网'
+                    },
+                    {
+                        id: 8,
+                        url: require('@/assets/image/officialwebsite-8.png'),
+                        title: 'B端官网',
+                        views: '1303',
+                        typeInfo: '官网'
+                    },
+                ]
+            },
+            {
+                id: 2,
+                title: '官网',
+                name: "2",
                 childern: [
                     {
                         id: 1,
@@ -125,52 +169,68 @@ export default {
                 ]
             },
             {
-                id: 2,
-                title: '官网',
-                active: false,
-                childern: []
-            },
-            {
                 id: 3,
                 title: '后台',
-                active: false,
+                name: "3",
                 childern: []
             },
             {
                 id: 4,
                 title: 'APP',
-                active: false,
+                name: "4",
                 childern: []
             },
             {
                 id: 5,
                 title: '小程序',
-                active: false,
+                name: "5",
                 childern: []
             }],
-            pageSize: 6,
-            renderList: [],
-            page:1,
-            pagination:[],
         }
     },
-    created() {
-        this.pagination = this.list[0].childern;
-        // console.log(this.renderList.length)
+
+    components:{
+        TemplateBox,
     },
-    mounted() {
-        this.getRenderList(0,this.pageSize);
+
+    created(){
+        this.arr = this.list[0].childern.slice(0,this.pageSize);
     },
+
+    mounted(){
+        console.log(this.renderList)
+        this.total = this.list[0].childern.length
+    },
+
+
     methods: {
-        getList(val) {
-            this.renderList = val;
+
+        handleSizeChange(val) {
+            this.pageSize = val;
         },
-        currentChange(currentChange){
-            console.log(currentChange);
-            this.getRenderList(this.pageSize*(currentChange-1),this.pageSize*currentChange);
+
+        handleCurrentChange(val) {
+            this.currentPage = val;
+            this.getRendList();
         },
-        getRenderList(start,end){
-            this.renderList = this.pagination.slice(start, end);
+
+        handleClick(event) {
+            this.currentPage = 1;
+            const index= Number(event.index);
+            this.renderList = this.list[index].childern;
+            this.arr = this.renderList.slice(this.getStart,(this.currentPage * this.pageSize));
+            console.log(this.arr);
+      },
+         
+        getRendList(){
+            this.arr = this.renderList.slice(this.getStart,(this.currentPage * this.pageSize));
+        }
+
+    },
+
+    computed:{
+        getStart(){
+            return (this.currentPage-1) * this.pageSize;
         }
     }
 
@@ -226,27 +286,19 @@ export default {
     padding: 14px 25px;
 }
 
-.main .list {
-    padding: 32px 0;
-    margin: 0 20px;
-    border-bottom: 1px solid #cccccc;
-}
-
-
-.main .section {
-    min-height: 370px;
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    column-gap: 32px;
-    padding-bottom: 40px;
-}
-
 .main .pagination {
     text-align: center;
 }
-/* 
-.footer {
-    height: 56px;
-} */
+
+.main .template {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 54px;
+    min-height: 440px;
+}
+.banner{
+    width: 100%;
+    height: 200px;
+}
 </style>
+          
