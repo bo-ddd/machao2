@@ -25,7 +25,7 @@
             </div>
             <div class="btm-motto-container mt-10">
               <p class="btm-motto">
-                提供您所需的全套软件开发服务
+                码s是致力于帮助用户开发网站和软件的一个平台。
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@
         <div class="view-two wrap" v-show="index === 2">
           <div class="index-top">
             <div class="top-motto-container">
-              新版阶段划分
+              我们目前主要帮助用户搭建官网。
               <br>
               自助验收,轻松交付
             </div>
@@ -50,7 +50,7 @@
 
         <!-- 切换banner -->
         <div class="check-banner">
-          <div :class="[{'check' :index == item},{'check-active':index == item},{'check-un':index != item}]" v-for="item in 2" :key="item" @click="handleChangeBanner(item)"></div>
+          <div :class="['check',{'check-active':index == item},{'check-un':index != item}]" v-for="item in 2" :key="item" @click="handleChangeBanner(item)"></div>
         </div>
       </div>
     </div>
@@ -227,22 +227,22 @@
     <!--为什么选择码s  -->
     <div class="check-us-wrap">
       <div class="check-us wrap">
-        <p class="title text-center">他们为什么选择码市</p>
-        <p class="desc text-center fs-16 c-bababa mt-10">我们的需求方在码市平台体验高效精准的人才匹配服务，开发者体验更便捷的接单服务。</p>
+        <p class="title text-center">为什么选择码s</p>
+        <p class="desc text-center fs-16 c-bababa mt-10">我们的需求方在码s平台体验高效精准的人才匹配服务，保证后续的代码维护。</p>
 
         <!-- 轮播图 -->
         <div class="check-us-detail mt-50">
             <div class="detail-container shadow">
               <div class="detail-item">
                 <div class="detail-item-left">
-                  <img src="https://assets.codemart.com/images/index/avatar/zhq.png">
+                  <img src="~/assets/image/banner-index.png">
                 </div>
                 <div class="detail-item-right">
                   <div>
                     <img src="~/assets/image/semi.png">
-                    <p class="desc"> “我们从码市创办之初就在码市提供服务了，现在全码市也名列第五咯，码市上的项目相比其他平台会更容易消化，因为大部分的需求方都比较专业，能说清楚自己的要求，也了解软件开发过程，甚至有的专业需求方能自己提供流程图脑图等资料，就很不错。”</p>
+                    <p class="desc"> "我们提供高效迅速的开发服务，保证用户在短时间内，能够获得项目。可以保证后续的代码维护服务。拥有良好的开发态度，成员认真负责。"</p>
                   </div>
-                  <p class="from">赵瀚卿·“零云”产品负责人</p>
+                  <p class="from">乌拉拉项目组</p>
                 </div>
               </div>
             </div>
@@ -359,28 +359,8 @@ import HeaderCom from '~/components/HeaderCom.vue';
     },
     {
       id:4,
-      img:require('~/assets/image/icon-html5.png'),
-      label:'前端开发',
-    },
-    {
-      id:5,
-      img:require('~/assets/image/icon-lb.png'),
-      label:'后端开发',
-    },
-    {
-      id:6,
-      img:require('~/assets/image/icon-product.png'),
-      label:'产品原型设计',
-    },
-    {
-      id:7,
-      img:require('~/assets/image/icon-test.png'),
-      label:'软件测试',
-    },
-    {
-      id:8,
-      img:require('~/assets/image/icon-ui-cn.png'),
-      label:'UI设计',
+      img:require('~/assets/image/icon-gz.png'),
+      label:'公众号开发',
     },
   ]
 export default {
@@ -474,14 +454,20 @@ export default {
 }
 
 .check-active {
-  width: 42px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   background: #3388e9;
 }
 
+.check-active,.check-un:hover{
+  cursor: pointer;
+}
+
 .check-un {
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   background: #fff;
 }
 

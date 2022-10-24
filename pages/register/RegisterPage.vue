@@ -26,15 +26,15 @@
             </OptionBox>
             </div> -->
             <div>
-                <TipInput class="mt-15 mb-8" v-model="userName" placeholder="用户名 (即个性后缀，注册后无法修改)" tipText="请输入用户名"
+                <TipInput class="mt-15 mb-8" v-model="form.username" placeholder="用户名 (即个性后缀，注册后无法修改)" tipText="请输入用户名"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <PhoneInput class="mt-15 mb-8" v-model="phoneNum" placeholder="手机号" tipText="请输入手机号"
-                    :errorImg="require('@/assets/image/icon-error.png')"></PhoneInput>
-                <TipInput class="mt-15 mb-8" v-model="phoneCode" placeholder="请输入手机验证码" tipText="请输入手机验证码"
+                <!-- <PhoneInput class="mt-15 mb-8" v-model="form.phoneNum" placeholder="手机号" tipText="请输入手机号"
+                    :errorImg="require('@/assets/image/icon-error.png')"></PhoneInput> -->
+                <TipInput class="mt-15 mb-8" v-model="form.avatarName" placeholder="请输入昵称" tipText="请输入昵称" 
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput class="mt-15 mb-8" v-model="passWord" placeholder="请输入密码" tipText="请输入密码"
+                <TipInput class="mt-15 mb-8" v-model="form.phoneNumber" placeholder="请输入手机号" tipText="请输入手机号"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
-                <TipInput class="mt-15 mb-8" v-model="againPassWord" placeholder="请确认密码" tipText="请确认密码"
+                <TipInput class="mt-15 mb-8" v-model="form.password" placeholder="请输入密码" tipText="请输入密码"  type="password"
                     :errorImg="require('@/assets/image/icon-error.png')"></TipInput>
 
                 <div class="con-check">
@@ -45,7 +45,7 @@
                     </nuxt-link>
                 </div>
 
-                    <SubmitButton class="mt-15">注册</SubmitButton>
+                    <SubmitButton class="mt-15" @btnClick="register">注册</SubmitButton>
             </div>
             </div>
         </div>
@@ -53,22 +53,61 @@
     </div>
 </template>
 <script>
+import {registerApi,loginApi} from '@/api/api.js'
 export default {
     data() {
         return {
-            userName: "",
-            phoneNum:'',
-            phoneCode: "",
-            passWord: "",
-            againPassWord: "",
-            userStatus:""
+            form:{
+            username: "",
+            avatarName:'',
+            phoneNumber: "",
+            password: "",
+            }
         };
+    },
+    mounted(){
+// console.log(this.$router.push('/'));
     },
     methods:{
         updateOp(status){
             console.log(status);
             this.userStatus=status;
             console.log(this.userStatus);
+        },
+        async register(){
+            let {username,password}=this.form;
+            let registerRes=await registerApi(this.form);
+            if(registerRes.data.status===1){
+                this.$message.success({
+                     message: '注册成功,正在为你登录'+registerRes.data.msg,
+                });
+            let loginRes=await loginApi({
+               username,password
+            });
+            console.log(loginRes);
+            if(loginRes.data.status===1){
+                // this.$message.success({
+                //     message: '登录成功,准备跳转'+loginRes.data.msg,
+                // });
+                console.log();
+                sessionStorage.setItem('token',loginRes.data.data.token)
+                setTimeout(()=>{
+                    this.to('/')
+                },2000)
+            }else{
+                this.$message.warning({
+                    message: '登录失败,'+loginRes.data.msg,
+                })
+            }    
+            }else{
+                this.$message.warning({
+                    message: '注册失败,'+registerRes.data.msg,
+                })
+            };
+                
+        },
+        to(routeName){
+            this.$router.push(routeName);
         }
     },
     computed:{
