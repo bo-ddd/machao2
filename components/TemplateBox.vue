@@ -1,7 +1,7 @@
 
 <template>
     <div class="container">
-        <img :src="src" alt="">
+        <img class="icon" :src="src" alt="">
         <div class="info">
             <p class="title fs-14">{{title}}</p>
             <div class=" align-center mt-10 ">
@@ -38,8 +38,6 @@ export default {
     },
 
     mounted() {
-        console.log(this.src);
-
     },
 
 }
@@ -58,7 +56,7 @@ export default {
 
 .container:hover {
     transition: all .3s ease-in-out;
-    box-shadow: 0px 10px 20px #c7c7c7;
+    box-shadow: 0px 0px 10px #c7c7c7;
     transform: translateY(-2px);
 }
 
@@ -68,5 +66,13 @@ export default {
 
 .info {
     padding: 15px 10px;
+}
+.title{
+    line-height: 12px;
+}
+.icon{
+    --size:350px;
+    width: var(--size);
+    height: var(--size);
 }
 </style>

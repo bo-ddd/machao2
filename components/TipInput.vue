@@ -1,6 +1,6 @@
 <template>
     <div class="tip-input">
-        <input class="mt-15 mb-8" :value="father" @input="changeValue" @focus="selected" @blur="checkForm" type="text"
+        <input class="mb-8" :value="father" @input="changeValue" @focus="selected" @blur="checkForm" :type="type"
             :placeholder='placeholder'>
         <div v-show="tipFlag" class="tip-error"><img :src="errorImg" alt="">{{tipText}}</div>
     </div>
@@ -12,7 +12,7 @@ export default {
             tipFlag: false
         }
     },
-    props: ['errorImg', 'placeholder', 'tipText', '', 'father'],
+    props: ['errorImg', 'placeholder', 'tipText', 'father','type'],
     model: {
         prop: 'father',  // 绑定的props属性，这里是'nameFromFather'
         event: 'dataToFather'    // 触发父组件中v-model绑定的属性发生改变的方法，名称自取
@@ -33,11 +33,9 @@ export default {
             }
         },
         changeValue(e) {
-            console.log(1);
             this.$emit('dataToFather', e.target.value);
         },
         selected() {
-            console.log(84);
             this.tipFlag = false;
         },
     }

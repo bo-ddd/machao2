@@ -1,7 +1,9 @@
 <template>
     <div class="head-nav just-between fs-14">
         <div class="nav-left align-center">
-            <img class="logo-img mr-30 img-s-28" :src="logoUrl" alt="">
+            <nuxt-link :to="{name:toUrl}">
+            <img class="logo-img mr-30 img-s-40" :src="logoUrl" alt="">
+            </nuxt-link>
             <span class="nav-left-text">
                 <slot name="left-text"></slot>
             </span>
@@ -17,7 +19,8 @@
 </template>
 <script>
 export default {
-    props: ['logoUrl']
+    props: ['toUrl','logoUrl'],
+
 }
 </script>
 <style scoped>
@@ -47,8 +50,8 @@ export default {
     height: 21px;
 }
 
-.img-s-28 {
-    height: 28px;
+.img-s-40 {
+    height: 40px;
 }
 @media screen and (max-width: 770px) {
     .nav-left-text {

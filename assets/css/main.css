@@ -129,6 +129,10 @@ body {
     margin-top: 40px;
 }
 
+.mt-45 {
+    margin-top: 45px;
+}
+
 .mr-44 {
     margin-right: 44px;
 }
@@ -290,6 +294,10 @@ body {
 
 .wrap {
     width: 1180px;
+    margin: 0 auto;
+}
+.square-wrap {
+    width: 1160px;
     margin: 0 auto;
 }
 
