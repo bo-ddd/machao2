@@ -18,7 +18,7 @@
 
             <main>
                <div class="main-left_box"></div>
-               <div class=""><img class="main-middle_icon" src="@/assets/image/sj.png" alt=""></div>
+               <div class=""><img class="main-middle_icon" src="@/assets/image/officialwebsite-8_centent.png" alt=""></div>
 
                <div class="main-right_box">
                 <div class="zoom">
@@ -35,12 +35,10 @@
 
             <div class="desc-box">
                 <div class="desc-title">
-                   <img src="@/assets/image/eat.png" alt=""> 小程序
+                   <img src="@/assets/image/eat.png" alt=""> 官网
                 </div>
                 <div class="desc-content">
-                    当代的我们,不是在吃外卖,就是在点外卖的路上。外卖点餐也从APP 发展到了更轻便的小程序上了～
-                    本素材就展示了一个经典点餐小程序的样式设计，具体包含点餐小程序的店铺选择、店铺详情、点餐、结账等核心页面模块，基本覆盖了点餐小程序的完整流程页面。
-                    设计保证了页面间配色的统一以及页面布局的简约性，还使用了微信小程序的基础组件。我是后加的
+                    一个企业的官网往往代表这个企业向公众所要传递的核心信息，更能直接与目标受众产生交流，最终完成一次关键信息售卖。
                 </div>
             </div>
         </div>
