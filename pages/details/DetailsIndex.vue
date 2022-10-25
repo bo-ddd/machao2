@@ -3,21 +3,34 @@
         <div class="wrap">
             <header>
                 <div class="header-title_box">
-                    <span class="header-title">点餐小程序原型</span>
+                    <span class="header-title">宣传广告</span>
                     <div class="header-icon">
                         <img src="@/assets/image/eye.png" alt=""> <span>1130</span>
-                        <img class="ml-10" src="@/assets/image/info_fill.png" alt=""> <span>App</span>
+                        <img class="ml-10" src="@/assets/image/info_fill.png" alt=""> <span>官网</span>
                     </div>
                 </div>
                 <div class="header-nav">
-                    <div class="nav-go_btn">前往墨刀体验</div>
+                    <div class="nav-go_btn">详情展示</div>
                     <div class="back-list_btn black-font">返回列表</div>
                 </div>
             </header>
 
 
             <main>
-               <img src="@/assets/image/sj.png" alt="">
+               <div class="main-left_box"></div>
+               <div class=""><img class="main-middle_icon" src="@/assets/image/sj.png" alt=""></div>
+
+               <div class="main-right_box">
+                <div class="zoom">
+                   <div class="zoom-left"><img src="@/assets/image/full-screen.png" alt=""></div>
+                   <div class="zoom-right">
+                    <img src="@/assets/image/low.png" alt="">
+                    <input type="text" value="80%">
+                    <img src="@/assets/image/add.png" alt="">
+                   </div> 
+                </div>
+               </div>
+
             </main>
 
             <div class="desc-box">
@@ -34,8 +47,8 @@
 
         <footer>
             <div class="footer-content">
-                <h3>码市</h3>
-            <span class="font-color_bbb">Copyright © 2014-2022 深圳市英选码市科技有限公司 版权所有 备案号: 粤ICP备18032316号-1</span> 
+                <h3></h3>
+            <span class="font-color_bbb"></span> 
             </div>
         </footer>
     </div>
@@ -44,18 +57,63 @@
 
 
 <style scoped>
+.main-left_box{
+    width:140px;
+}
+
+
+.main-right_box{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.zoom img {
+    width: 18px;
+    height: 100%;
+}
+
+.zoom{
+    background: white;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    
+    justify-content: center;
+    padding: 8px 0;
+    border-radius: 5px;
+}
+
+.zoom-left{
+    border-right: 1px solid rgb(229, 229, 229);
+    padding:0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.zoom-right{
+    padding:0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.zoom-right input{
+    width: 50px;
+    text-indent:13px;
+    font-size: 12px;
+}
+    
 .font-color_bbb{
     color: #adadad;
 }
 
-main img{
-  height: 60%;
-  padding: 10px;
+.main-middle_icon{
+  height: 600px;
 }
 
 main{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -72,7 +130,7 @@ main{
 footer {
     color: #ffff;
     height: 60px;
-    background: rgb(49, 51, 73);
+    background: #2c2d34;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +138,7 @@ footer {
 }
 
 .footer-content{
-   width: 70%;
+   width: 75%;
    display: flex;
    align-items: center;
    gap: 0 20px;
