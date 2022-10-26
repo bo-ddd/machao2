@@ -43,12 +43,12 @@
             </div>
         </div>
 
-        <footer>
+        <!-- <footer>
             <div class="footer-content">
                 <h3></h3>
             <span class="font-color_bbb"></span> 
             </div>
-        </footer>
+        </footer> -->
     </div>
 
 </template>
