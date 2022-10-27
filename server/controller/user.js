@@ -1,5 +1,7 @@
 const App = require('../app');
 const Jwt = require('../../assets/util/jwt.js');
+const axios = require("axios")
+
 class UserController extends App {
     constructor() {
         super();
@@ -17,9 +19,20 @@ class UserController extends App {
         res.json(data);
     }
 
-    async register() {
+    async register(){
         const { res, req } = this.ctx;
-        const { username, password, phoneNumber } = req.body;
+        const { username, password, phoneNumber,avatarName } = req.body;
+        console.log('------------axios----------')
+        console.log(username, password, phoneNumber)
+        axios.post("http://8.131.89.181:8080/user/register", {username, password, phoneNumber, avatarName}).then(data=>{
+            console.log(data.data)
+            return res.success(data.data);
+        })
+    }
+
+    async registers() {
+        const { res, req } = this.ctx;
+        const { username, password, phoneNumber,avatarName } = req.body;
 
         if (!username) {
             return res.fail('用户名不能为空');
@@ -41,7 +54,7 @@ class UserController extends App {
             };
 
             // 添加手机号
-            this.connection.query('insert into user_info (phoneNumber) values(?)', [phoneNumber],(error, userInfo)=>{
+            this.connection.query('insert into user_info (phoneNumber,avatarName) values(?, ?)', [phoneNumber,avatarName],(error, userInfo)=>{
                 console.log(userInfo);
                 if(error){
                     return this.connection.rollback(res.fail('添加手机号失败'));
@@ -51,10 +64,14 @@ class UserController extends App {
                 // 添加用户名和密码
                 console.log(username,password, userId)
                 this.connection.query('insert into user (username, password, userId) values(?, ?, ?)', [username, password, userId],(error, data)=>{
+                    console.log('------registerData-------');
+                    console.log(data);
+                    console.log('-----error---------');
+                    console.log(error);
+                    res.success(data);
                     if(error){
                         return this.connection.rollback(res.fail('添加用户信息失败'))
                     }
-                    res.success(data);
                 });
             })
 
@@ -65,7 +82,8 @@ class UserController extends App {
         const { res, req } = this.ctx;
         const { username , password } = req.body;
         let data =await res.sql('select * from user where username=? and password=?',[username,password]);
-        if(data.status==1){
+        console.log(data);
+        if(data.data.length){
             let resData = data.data[0];
             let token = Jwt.sign(resData);
             res.success({'token':token});

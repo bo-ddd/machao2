@@ -3,59 +3,115 @@
         <div class="wrap">
             <header>
                 <div class="header-title_box">
-                    <span class="header-title">点餐小程序原型</span>
+                    <span class="header-title">宣传广告</span>
                     <div class="header-icon">
                         <img src="@/assets/image/eye.png" alt=""> <span>1130</span>
-                        <img class="ml-10" src="@/assets/image/info_fill.png" alt=""> <span>App</span>
+                        <img class="ml-10" src="@/assets/image/info_fill.png" alt=""> <span>官网</span>
                     </div>
                 </div>
                 <div class="header-nav">
-                    <div class="nav-go_btn">前往墨刀体验</div>
+                    <div class="nav-go_btn">详情展示</div>
                     <div class="back-list_btn black-font">返回列表</div>
                 </div>
             </header>
 
 
             <main>
-               <img src="@/assets/image/sj.png" alt="">
+               <div class="main-left_box"></div>
+               <div class=""><img class="main-middle_icon" src="@/assets/image/officialwebsite-8_centent.png" alt=""></div>
+
+               <div class="main-right_box">
+                <div class="zoom">
+                   <div class="zoom-left"><img src="@/assets/image/full-screen.png" alt=""></div>
+                   <div class="zoom-right">
+                    <img src="@/assets/image/low.png" alt="">
+                    <input type="text" value="80%">
+                    <img src="@/assets/image/add.png" alt="">
+                   </div> 
+                </div>
+               </div>
+
             </main>
 
             <div class="desc-box">
                 <div class="desc-title">
-                   <img src="@/assets/image/eat.png" alt=""> 小程序
+                   <img src="@/assets/image/eat.png" alt=""> 官网
                 </div>
                 <div class="desc-content">
-                    当代的我们,不是在吃外卖,就是在点外卖的路上。外卖点餐也从APP 发展到了更轻便的小程序上了～
-                    本素材就展示了一个经典点餐小程序的样式设计，具体包含点餐小程序的店铺选择、店铺详情、点餐、结账等核心页面模块，基本覆盖了点餐小程序的完整流程页面。
-                    设计保证了页面间配色的统一以及页面布局的简约性，还使用了微信小程序的基础组件。我是后加的
+                    一个企业的官网往往代表这个企业向公众所要传递的核心信息，更能直接与目标受众产生交流，最终完成一次关键信息售卖。
                 </div>
             </div>
         </div>
 
-        <footer>
+        <!-- <footer>
             <div class="footer-content">
-                <h3>码市</h3>
-            <span class="font-color_bbb">Copyright © 2014-2022 深圳市英选码市科技有限公司 版权所有 备案号: 粤ICP备18032316号-1</span> 
+                <h3></h3>
+            <span class="font-color_bbb"></span> 
             </div>
-        </footer>
+        </footer> -->
     </div>
 
 </template>
 
 
 <style scoped>
+.main-left_box{
+    width:140px;
+}
+
+
+.main-right_box{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.zoom img {
+    width: 18px;
+    height: 100%;
+}
+
+.zoom{
+    background: white;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    
+    justify-content: center;
+    padding: 8px 0;
+    border-radius: 5px;
+}
+
+.zoom-left{
+    border-right: 1px solid rgb(229, 229, 229);
+    padding:0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.zoom-right{
+    padding:0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.zoom-right input{
+    width: 50px;
+    text-indent:13px;
+    font-size: 12px;
+}
+    
 .font-color_bbb{
     color: #adadad;
 }
 
-main img{
-  height: 60%;
-  padding: 10px;
+.main-middle_icon{
+  height: 600px;
 }
 
 main{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -72,7 +128,7 @@ main{
 footer {
     color: #ffff;
     height: 60px;
-    background: rgb(49, 51, 73);
+    background: #2c2d34;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +136,7 @@ footer {
 }
 
 .footer-content{
-   width: 70%;
+   width: 75%;
    display: flex;
    align-items: center;
    gap: 0 20px;

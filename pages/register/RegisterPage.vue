@@ -41,7 +41,7 @@
                     <input type="checkbox">
                     我同意遵守
                     <nuxt-link to="" class="link-style">
-                    《码市用户服务协议》
+                    《码S用户服务协议》
                     </nuxt-link>
                 </div>
 
@@ -77,7 +77,8 @@ export default {
         async register(){
             let {username,password}=this.form;
             let registerRes=await registerApi(this.form);
-            if(registerRes.data.status===1){
+            console.log(registerRes);
+            if(registerRes.data.data.status===1){
                 this.$message.success({
                      message: '注册成功,正在为你登录'+registerRes.data.msg,
                 });
@@ -89,7 +90,6 @@ export default {
                 // this.$message.success({
                 //     message: '登录成功,准备跳转'+loginRes.data.msg,
                 // });
-                console.log();
                 sessionStorage.setItem('token',loginRes.data.data.token)
                 setTimeout(()=>{
                     this.to('/')
@@ -101,7 +101,7 @@ export default {
             }    
             }else{
                 this.$message.warning({
-                    message: '注册失败,'+registerRes.data.msg,
+                    message: '注册失败,'+registerRes.data.data.msg,
                 })
             };
                 
